@@ -1,30 +1,30 @@
 [
   {
       "title":"Meta Description",
-      "imgName":"meta-description"
+      "imgName":"metadescription"
   },
   {
       "title":"Schema.org Microdata",
-      "imgName":"schema.org-microdata"
+      "imgName":"microdata"
   },
   {
       "title":"Schema.org JSON-ld",
-      "imgName":"schema.org-json-ld"
+      "imgName":"jsonld"
   },
   {
       "title":"oEmbed XML format",
-      "imgName":"oembed-xml-format"
+      "imgName":"oembedxml"
   },
   {
       "title":"oEmbed JSON format",
-      "imgName":"oembed-json-format"
+      "imgName":"oembedjson"
   },
   {
       "title":"Facebook Open Graph",
-      "imgName":"facebook-open-graph"
+      "imgName":"opengraph"
   },
   {
       "title":"Twitter Card",
-      "imgName":"twitter-card"
+      "imgName":"twitter"
   }
 ]

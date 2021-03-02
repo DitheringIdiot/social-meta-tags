@@ -5,7 +5,7 @@
     <title>Preview Test | oEmbed XML Title</title>
     <provider_name>oEmbed XML provider_name</provider_name>
     <provider_url>https://focused-mcclintock-2e0b48.netlify.app</provider_url>
-    <thumbnail_url>/previews/oembed-xml.png</thumbnail_url>
+    <thumbnail_url>/previews/oembedxml.png</thumbnail_url>
     <thumbnail_width>600</thumbnail_width>
     <thumbnail_height>275</thumbnail_height>
     <html>&lt;blockquote&gt;Preview Test | oEmbed XML Description — This description came from oEmbed in XML format.&lt;/blockquote&gt;</html>

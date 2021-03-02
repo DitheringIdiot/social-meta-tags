@@ -4,7 +4,7 @@
     "title": "Preview Test | oEmbed JSON Title",
     "provider_name": "oEmbed JSON provider_name",
     "provider_url": "https://focused-mcclintock-2e0b48.netlify.app",
-    "thumbnail_url": "/previews/oembed-json.png",
+    "thumbnail_url": "/previews/oembedjson.png",
     "thumbnail_width": 600,
     "thumbnail_height": 275,
     "html": "<blockquote>Preview Test | oEmbed XML Description — This description came from oEmbed in XML format.<\/blockquote>",
