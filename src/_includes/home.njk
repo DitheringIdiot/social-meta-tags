@@ -1,0 +1,25 @@
+---
+layout: "base.njk"
+---
+<header>
+    <h1>Social Preview Test Site</h1>
+    <p>Use this site to test out different combinations of meta tags for enabling previews on social media sites and instant messenger apps.</p>
+</header>
+<section>
+    <form>
+
+        {% for item in tagData.tags %}
+            <input id="{{item.name}}" type="checkbox" name="{{item.name}}" value="{{item.name}}" id="{{item.name}}-check">
+            <label class="checkbox" for="{{item.name}}">
+                Include {{item.title}}
+            </label>
+        {% endfor %}
+
+        <figure>
+            <figcaption>Copy this link to test your social config.</figcaption>
+            {% dynamicUrl tagData.tags %}
+        </figure>
+    </form>
+</section>
+
+{{ content | safe }}

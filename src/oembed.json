@@ -1,0 +1,11 @@
+{
+    "version": 1.0,
+    "type": "rich",
+    "title": "Preview Test | oEmbed JSON Title",
+    "thumbnail_url": "/previews/oembed-json.png",
+    "thumbnail_width": 600,
+    "thumbnail_height": 275,
+    "html": "<blockquote>Preview Test | oEmbed XML Description — This description came from oEmbed in XML format.<\/blockquote>",
+    "width": 600,
+    "height": 300
+}

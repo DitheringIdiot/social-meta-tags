@@ -1,0 +1,31 @@
+code {
+        border-radius:4px;
+        background:var(--shade);
+        color:var(--text);
+        font-size:get-size('300');
+        -webkit-box-decoration-break:clone;
+        box-decoration-break:clone;
+        padding:.1em .2em;
+}
+
+
+figure {
+    background:var(--code-bg);
+    color:var(--code-text);
+    border-radius:4px;
+}
+
+figcaption {
+    color:var(--code-text);
+    background:var(--code-header);
+    padding:get-size('400');
+    font-size:get-size('400');
+    border-radius:4px 4px 0 0;
+}
+
+
+pre {
+    padding:get-size('400');
+    white-space:pre;
+    overflow-x:scroll;
+}

@@ -1,0 +1,13 @@
+---
+permalink: "./previews.json"
+permalinkBypassOutputDir: true
+eleventyExcludeFromCollections: true
+---
+[
+{%- for tag in tagData.tags %}
+  {
+      "title":"{{ tag.title | safe }}",
+      "imgName":"{{ tag.name }}"
+  }{% if loop.last == false %},{% endif -%}
+{% endfor %}
+]

@@ -1,0 +1,30 @@
+[
+  {
+      "title":"Meta Description",
+      "imgName":"metadescription"
+  },
+  {
+      "title":"Microdata",
+      "imgName":"microdata"
+  },
+  {
+      "title":"JSON-ld",
+      "imgName":"jsonld"
+  },
+  {
+      "title":"oEmbed XML format",
+      "imgName":"oembedxml"
+  },
+  {
+      "title":"oEmbed JSON format",
+      "imgName":"oembedjson"
+  },
+  {
+      "title":"Facebook Open Graph",
+      "imgName":"opengraph"
+  },
+  {
+      "title":"Twitter",
+      "imgName":"twitter"
+  }
+]

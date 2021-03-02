@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" {% if renderData.microdata === "true" %}{{schemaMicrodataHtmlTagData}}{% endif %}>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+        {%- set imageUrl %}{{renderData.imageUrl}}{% endset-%}
+        {%- set title %}{{ renderData.title }}{% endset -%}
+        {%- set description %}{{ renderData.description }}{% endset -%}
+        {%- set url %}{{ renderData.url }}{% endset -%}
+
+        {% for tag in tagData.types %}
+            {% if renderData[tag] === "true" %}
+                {% include tag + ".njk"%}
+            {% endif %}
+        {% endfor %}
+
+        <style>
+            {% if style %}
+                {% include "../../public/css/" + style + ".css" %}
+            {% else %}
+                {% include "../../public/css/critical.css" %}
+            {% endif %}
+        </style>
+    </head>
+    <body>
+
+        <h1>{{title}}</h1>
+
+        {%- set code %}
+        {% for tag in tagData.types %}
+            {% if renderData[tag] === "true" %}{%- set tags %}{% include tag + ".njk"%}{% endset -%}{{ tags | safe }}
+            {% endif %}
+        {% endfor %}
+        {% endset -%}
+
+        {% trimwhitespace %}
+        {% highlight "html" %}{{ code | safe }}{% endhighlight %}
+        {% endtrimwhitespace %}
+
+        {{ content | safe }}
+    </body>
+</html>

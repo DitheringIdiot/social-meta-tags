@@ -1,0 +1,23 @@
+---
+description:
+layout: test-base.njk
+templateEngineOverride: njk
+pagination:
+    data: tagData.combinations
+    size: 1
+    alias: test
+permalink: "/tests/{{ test.slug }}/"
+tag: test
+renderData:
+  title: "Preview Test | {{test.text}}"
+  description: "Preview Test | {{test.text}}"
+  imageUrl: "preview/{{test.slug}}.png"
+  url: "/tests/{{ test.slug }}/"
+  metadescription: "{{test.metadescription}}"
+  jsonld: "{{test.jsonld}}"
+  microdata: "{{test.microdata}}"
+  oembedjson: "{{test.oembedjson}}"
+  oembedxml: "{{test.oembedxml}}"
+  opengraph: "{{test.opengraph}}"
+  twitter: "{{test.twitter}}"
+---

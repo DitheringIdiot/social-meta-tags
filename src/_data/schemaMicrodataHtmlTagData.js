@@ -1,0 +1,1 @@
+module.exports = `itemscope itemtype="https://schema.org/WebPage"`

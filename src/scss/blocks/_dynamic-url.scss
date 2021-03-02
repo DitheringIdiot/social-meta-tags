@@ -1,0 +1,70 @@
+figure > .dynamic-url {
+
+    display:block;
+    padding:get-size('400');
+    border:solid 2px var(--text);
+    border-radius:4px;
+
+
+    span {
+        display:none;
+    }
+
+}
+
+#metadescription:checked ~ figure > .dynamic-url > .metadescription-url {
+    display:inline;
+}
+
+#metadescription:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .metadescription-url + .dash {
+    display:inline;
+}
+
+#microdata:checked ~ figure > .dynamic-url > .microdata-url {
+    display:inline;
+}
+
+#microdata:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .microdata-url + .dash {
+    display:inline;
+}
+
+#oembedxml:checked ~ figure > .dynamic-url > .oembedxml-url {
+    display:inline;
+}
+
+#oembedxml:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .oembedxml-url + .dash {
+    display:inline;
+}
+
+#oembedjson:checked ~ figure > .dynamic-url > .oembedjson-url {
+    display:inline;
+}
+
+#oembedjson:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .oembedjson-url + .dash {
+    display:inline;
+}
+
+#jsonld:checked ~ figure > .dynamic-url > .jsonld-url {
+    display:inline;
+}
+
+#jsonld:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .jsonld-url + .dash {
+    display:inline;
+}
+
+#opengraph:checked ~ figure > .dynamic-url > .opengraph-url {
+    display:inline;
+}
+
+#opengraph:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .opengraph-url + .dash {
+    display:inline;
+}
+
+#twitter:checked ~ figure > .dynamic-url > .twitter-url {
+    display:inline;
+}
+
+// #twitter:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .twitter-url + .dash {
+//     display:inline;
+// }
+

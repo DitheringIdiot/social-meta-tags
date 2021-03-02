@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<oembed>
+	<version>1.0</version>
+	<type>rich</type>
+    <title>Preview Test | oEmbed XML Title</title>
+    <thumbnail_url>/previews/oembed-xml.png</thumbnail_url>
+    <thumbnail_width>600</thumbnail_width>
+    <thumbnail_height>275</thumbnail_height>
+    <html>&lt;blockquote&gt;Preview Test | oEmbed XML Description — This description came from oEmbed in XML format.&lt;/blockquote&gt;</html>
+    <width>600</width>
+    <height>300</height>
+</oembed>
