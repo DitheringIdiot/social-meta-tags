@@ -10,5 +10,14 @@ module.exports = [
 
         }
 
+    },
+    {
+        name: "facebook",
+        url: "https://facebook.com",
+        tests: {
+            metadescription: {
+                status: "good"
+            }
+        }
     }
 ]
