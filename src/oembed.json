@@ -1,7 +1,9 @@
 {
-    "version": 1.0,
+    "version": "1.0",
     "type": "rich",
     "title": "Preview Test | oEmbed JSON Title",
+    "provider_name": "oEmbed JSON provider_name",
+    "provider_url": "https://focused-mcclintock-2e0b48.netlify.app",
     "thumbnail_url": "/previews/oembed-json.png",
     "thumbnail_width": 600,
     "thumbnail_height": 275,
