@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
 {%- for tag in tagData.tags %}
   {
       "title":"{{ tag.title | safe }}",
-      "imgName":"{{ tag.name }}"
+      "imgName":"{{ tag.title | slug }}"
   }{% if loop.last == false %},{% endif -%}
 {% endfor %}
 ]

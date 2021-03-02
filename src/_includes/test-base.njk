@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" {% if renderData.microdata === "true" %}{{schemaMicrodataHtmlTagData}}{% endif %}>
+<html lang="en" {% if renderData.microdata === "true" %}{{schemaMicrodataHtmlTagData | safe}}{% endif %}>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"/>

@@ -3,6 +3,8 @@
 	<version>1.0</version>
 	<type>rich</type>
     <title>Preview Test | oEmbed XML Title</title>
+    <provider_name>oEmbed XML provider_name</provider_name>
+    <provider_url>https://focused-mcclintock-2e0b48.netlify.app</provider_url>
     <thumbnail_url>/previews/oembed-xml.png</thumbnail_url>
     <thumbnail_width>600</thumbnail_width>
     <thumbnail_height>275</thumbnail_height>
