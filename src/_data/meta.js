@@ -1,4 +1,4 @@
 module.exports = {
-    siteName: 'Social Preview Test',
-    siteUrl: 'https://social-previews.com/'
+    siteName: 'Get out of my <head>',
+    siteUrl: 'https://getoutofmyhead.dev/'
 }

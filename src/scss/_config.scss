@@ -31,7 +31,10 @@ $gorko-size-scale: (
  */
 $gorko-colors: (
   'text':var(--text),
-  'base':var(--base)
+  'base':var(--base),
+  'shade':var(--shade),
+  'glare':var(--glare),
+  'highlight':var(--highlight)
 );
 
 /**
@@ -57,8 +60,8 @@ $gorko-config: (
   ),
   'font': (
     'items': (
-        'base': "Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace",
-        'text': '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif'
+        'mono': "Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace",
+        'base': 'Georgia, serif'
       ),
     'output': 'standard',
     'property': 'font-family',

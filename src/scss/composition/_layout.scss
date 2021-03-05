@@ -1,6 +1,5 @@
 * {
     max-width:35rem;
-    margin:1rem auto 0;
 }
 
 html, 
@@ -9,15 +8,27 @@ header,
 article,
 section,
 footer,
-div {
+main,
+div,
+form {
     max-width:none;
     margin:0;
 }
 
-span, pre, figcaption {
+span, pre, figcaption, br, code, pre {
     margin-top:0;
 }
 
 body {
-    padding:get-size('700') get-size('300') get-size('800');
+    padding:0;
+}
+
+aside > *, form > *, div > *, article > * ol > *, ul > *, header > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+aside > * + *, form > * + *, ul > * + *, ol > * + *, article > * + *, article > div > * + *, header > * + * {
+    margin-top:get-size('600');
+    margin-bottom:0;
 }

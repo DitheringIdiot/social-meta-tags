@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "social-images": "eleventy-social-images --siteName 'Social Preview Test' --outputDir public --dataFile ./previews.json",
+    "social-images": "eleventy-social-images --siteName 'Social Preview Test' --outputDir public --dataFile ./previews.json --stylesPath public/css/social.css",
     "start": "npx gulp && concurrently \"NODE_ENV=development npx gulp watch\" \"NODE_ENV=development npx eleventy --serve\"",
     "production": "NODE_ENV=production npx gulp && NODE_ENV=production npx eleventy; npm run social-images"
   },
@@ -17,6 +17,11 @@
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-sass": "^4.1.0",
-    "html-minifier": "^4.0.0"
+    "html-minifier": "^4.0.0",
+    "jsdom": "^16.4.0",
+    "markdown-it": "^12.0.4",
+    "markdown-it-anchor": "^7.0.2",
+    "markdown-it-attrs": "^4.0.0",
+    "markdown-it-div": "^1.1.0"
   }
 }
