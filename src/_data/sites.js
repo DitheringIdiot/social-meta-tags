@@ -4,9 +4,14 @@ module.exports = [
         url: "https://twitter.com",
         tests: {
             metadescription: {
-                status: "bad",
-                note: ""
+                works: false
             },
+            microdata: {
+                works: false
+            },
+            jsonld: {
+                works: false
+            }
 
         }
 
