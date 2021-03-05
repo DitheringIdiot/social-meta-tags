@@ -16,7 +16,9 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPassthroughCopy("./src/css")
     eleventyConfig.addPassthroughCopy("./src/favicon.ico")
     eleventyConfig.addPassthroughCopy("./src/oembed.xml")
-    eleventyConfig.addPassthroughCopy("./src/oembed.json")
+    eleventyConfig.addPassthroughCopy("./src/oembed-rich.json")
+    eleventyConfig.addPassthroughCopy("./src/oembed-link.json")
+    eleventyConfig.addPassthroughCopy("./src/oembed-image.json")
     eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png")
     eleventyConfig.addWatchTarget("./src/css/")
 

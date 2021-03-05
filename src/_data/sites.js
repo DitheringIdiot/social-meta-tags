@@ -24,20 +24,60 @@ module.exports = [
     {
         name: "slack",
         url: "",
-        title: {
-            works: true,
-            note: "only in conjunction with metadescription"
+        tests: {
+            title: {
+                works: true,
+                note: "only in conjunction with metadescription"
+            },
+            metadescription: true,
+            microdata: false,
+            jsonld: false,
+            oembedxml: false,
+            oembedjson: {
+                works: false,
+                note: "double check this"
+            },
+            twitter: true,
+            opengraph: true
+        }
+    },
+    {
+        name: "iMessage",
+        url: "",
+        tests: {
+            title: true,
+            metadescription: false,
+            microdata: true,
+            jsonld: {
+                works: false,
+                note: "double check this"
+            },
+            oembedxml: false,
+            oembedjson: false,
+            opengraph: true,
+            twitter: true
         },
-        metadescription: true,
-        microdata: false,
-        jsonld: false,
-        oembedxml: false,
-        oembedjson: {
-            works: false,
-            note: "double check this"
-        },
-        twitter: true,
-        opengraph: true
+        note: "Uses Apple Touch Icon if present at the root"
+    },
+    {
+        name: "Discord",
+        url: "",
+        tests: {
+            title: {
+                works: true,
+                note: "only in conjunction with a meta description"
+            },
+            metadescription: true,
+            microdata: false,
+            jsonld: false,
+            oembedxml: false,
+            oembedjson: {
+                works: true,
+                note: "Only displayed title and url provider"
+            },
+            opengraph: true,
+            twitter: true,
+        }
     },
     {
         name: "facebook",
@@ -50,3 +90,18 @@ module.exports = [
     },
 
 ]
+
+// {
+//     name: "",
+//     url: "",
+// tests:{
+//     title: -,
+//     metadescription: -,
+//     microdata: -,
+//     jsonld: -,
+//     oembedxml: -,
+//     oembedjson: -,
+//     twitter: -,
+//     opengraph: -
+// }
+// },

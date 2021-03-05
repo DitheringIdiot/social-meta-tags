@@ -13,11 +13,19 @@
   },
   {
       "title":"oEmbed XML format",
-      "imgName":"oembedxml"
+      "imgName":"oembed_xml"
   },
   {
-      "title":"oEmbed JSON format",
-      "imgName":"oembedjson"
+      "title":"oEmbed JSON format | Rich",
+      "imgName":"oembed_json_rich"
+  },
+  {
+      "title":"oEmbed JSON format | Photo",
+      "imgName":"oembed_json_photo"
+  },
+  {
+      "title":"oEmbed JSON format | Link",
+      "imgName":"oembed_json_link"
   },
   {
       "title":"Facebook Open Graph",

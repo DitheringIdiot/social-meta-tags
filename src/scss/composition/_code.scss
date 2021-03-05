@@ -1,3 +1,13 @@
+pre {
+    background:var(--text);
+    color:var(--base);
+    font-size:14px;
+    padding:1rem;
+    border-radius:4px;
+    overflow-y:hidden;
+    overflow-x:scroll;
+}
+
 code {
         border-radius:4px;
         background:var(--shade);

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
-        <title>Preview Test | Title Tag</title>
+        <title>Preview Test | Title Tag </title>
 
         {%- set imageUrl %}{{renderData.imageUrl}}{% endset-%}
         {%- set title %}{{ renderData.title }}{% endset -%}
@@ -25,20 +25,33 @@
         </style>
     </head>
     <body>
+        <article>
+            <div>
 
-        <h1>{{title}}</h1>
+                <h1>{{title}}</h1>
 
-        {%- set code %}
-        {% for tag in tagData.types %}
-            {% if renderData[tag] === "true" %}{%- set tags %}{% include tag + ".njk"%}{% endset -%}{{ tags | safe }}
-            {% endif %}
-        {% endfor %}
-        {% endset -%}
+                {%- set code %}
+                {% for tag in tagData.types %}
+                    {% if renderData[tag] === "true" %}{%- set tags %}{% include tag + ".njk"%}{% endset -%}{{ tags | safe }}
+                    {% endif %}
+                {% endfor %}
+                {% endset -%}
 
-        {% trimwhitespace %}
-        {% highlight "html" %}{{ code | safe }}{% endhighlight %}
-        {% endtrimwhitespace %}
+            </div>
 
-        {{ content | safe }}
+            <div>
+
+                <figure>
+                    <figcaption>social tags used on this page</figcaption>
+                    {% trimwhitespace %}
+                    {% highlight "html" %}{{ code | safe }}{% endhighlight %}
+                    {% endtrimwhitespace %}
+                </figure>
+
+                {{ content | safe }}
+
+            </div>
+
+        </article>
     </body>
 </html>
