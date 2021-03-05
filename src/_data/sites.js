@@ -1,6 +1,6 @@
 module.exports = [
     {
-        name: "twitter",
+        name: "Twitter",
         url: "https://twitter.com",
         tests: {
             title: false,
@@ -12,7 +12,7 @@ module.exports = [
             oembed_xml_rich: null,
             oembed_json_rich: false,
             oembed_json_photo: null,
-            oembed_json_link: null,
+            oembed_json_link: false,
             twitter: {
                 works: true,
                 note: "must use absolute urls"
@@ -26,7 +26,7 @@ module.exports = [
 
     },
     {
-        name: "slack",
+        name: "Slack",
         url: "",
         tests: {
             title: {
@@ -39,8 +39,8 @@ module.exports = [
             oembed_xml_photo: null,
             oembed_xml_link: null,
             oembed_xml_rich: null,
-            oembed_json_rich: null,
-            oembed_json_photo: null,
+            oembed_json_rich: false,
+            oembed_json_photo: true,
             oembed_json_link: {
                 works: true,
                 note: "requires a non-official 'description' value to show description"
@@ -100,7 +100,7 @@ module.exports = [
         }
     },
     {
-        name: "facebook",
+        name: "Facebook",
         url: "https://facebook.com",
         tests: {
             title: null,
@@ -119,24 +119,6 @@ module.exports = [
     },
     {
         name: "Whatsapp",
-        url: "",
-        tests: {
-            title: null,
-            metadescription: null,
-            microdata: null,
-            jsonld: null,
-            oembed_xml_photo: null,
-            oembed_xml_link: null,
-            oembed_xml_rich: null,
-            oembed_json_link: null,
-            oembed_json_photo: null,
-            oembed_json_rich: null,
-            twitter: null,
-            opengraph: null
-        }
-    },
-    {
-        name: "Signal",
         url: "",
         tests: {
             title: null,
@@ -214,7 +196,7 @@ module.exports = [
         }
     },
     {
-        name: "reddit",
+        name: "Reddit",
         url: "https://www.reddit.com/",
         tests: {
             title: true,
@@ -236,21 +218,21 @@ module.exports = [
     }
 ]
 
-var test = {
-    name: "",
-    url: "",
-    tests: {
-        title: null,
-        metadescription: null,
-        microdata: null,
-        jsonld: null,
-        oembed_xml_photo: null,
-        oembed_xml_link: null,
-        oembed_xml_rich: null,
-        oembed_json_link: null,
-        oembed_json_photo: null,
-        oembed_json_rich: null,
-        twitter: null,
-        opengraph: null
-    }
-}
+// var test = {
+//     name: "",
+//     url: "",
+//     tests: {
+//         title: null,
+//         metadescription: null,
+//         microdata: null,
+//         jsonld: null,
+//         oembed_xml_photo: null,
+//         oembed_xml_link: null,
+//         oembed_xml_rich: null,
+//         oembed_json_link: null,
+//         oembed_json_photo: null,
+//         oembed_json_rich: null,
+//         twitter: null,
+//         opengraph: null
+//     }
+// }

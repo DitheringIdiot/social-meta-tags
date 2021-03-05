@@ -28,7 +28,7 @@ figure > .dynamic-url {
     display:inline;
 }
 
-#oembed_xml:checked ~ figure > .dynamic-url > .oembedxml-url {
+#oembed_xml:checked ~ figure > .dynamic-url > .oembed_xml-url {
     display:inline;
 }
 
@@ -36,27 +36,11 @@ figure > .dynamic-url {
     display:inline;
 }
 
-#oembed_json_rich:checked ~ figure > .dynamic-url > .oembed_json_rich-url {
+#oembed_json:checked ~ figure > .dynamic-url > .oembed_json-url {
     display:inline;
 }
 
-#oembed_json_rich:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .oembed_json_rich-url + .dash {
-    display:inline;
-}
-
-#oembed_json_photo:checked ~ figure > .dynamic-url > .oembed_json_photo-url {
-    display:inline;
-}
-
-#oembed_json_photo:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .oembed_json_photo-url + .dash {
-    display:inline;
-}
-
-#oembed_json_link:checked ~ figure > .dynamic-url > .oembed_json_link-url {
-    display:inline;
-}
-
-#oembed_json_link:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .oembed_json_link-url + .dash {
+#oembed_json:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .oembed_json-url + .dash {
     display:inline;
 }
 
@@ -80,7 +64,50 @@ figure > .dynamic-url {
     display:inline;
 }
 
-// #twitter:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .twitter-url + .dash {
-//     display:inline;
-// }
 
+.social-preview-url-maker {
+    .radio {
+        display:none;
+    }
+
+    .oembed-type-note {
+        display:none;
+        margin-left:auto;
+        margin-right: auto;
+    }
+
+    // Show Radio Buttons if oembed options is selected
+    #oembed_json:checked ~ .radio, #oembed_xml:checked ~ .radio {
+        display:flex; 
+    }
+
+    #oembed_json:checked ~ .oembed-type-note, #oembed_xml:checked ~ .oembed-type-note {
+        display:initial; 
+    }
+
+}
+
+#rich:checked ~ figure > .dynamic-url > .rich-url {
+    display:inline;
+}
+
+#video:checked ~ figure > .dynamic-url > .video-url {
+    display:inline;
+}
+
+#photo:checked ~ figure > .dynamic-url > .photo-url {
+    display:inline;
+}
+
+#link:checked ~ figure > .dynamic-url > .link-url {
+    display:inline;
+}
+
+#oembed_json:not(:checked) ~ #oembed_xml:not(:checked) ~ figure, #oembed_xml:not(:checked) ~ #oembed_json:not(:checked) ~ figure {
+
+    & > .dynamic-url {
+    & > .link-url, & > .photo-url, & > .video-url, & > .rich-url {
+        display:none;
+    }
+    }
+}

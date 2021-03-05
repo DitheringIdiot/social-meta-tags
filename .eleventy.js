@@ -35,13 +35,13 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addPairedShortcode("trimwhitespace", (content) => {
         //return content
-        return content.split('<br>').map(line => line.trim()).join('\n')
+        return content.split('<br>').map(line => line.trim()).join('\n').replace(/(\r\n|\r|\n){2,}/g, '$1\n')
     })
 
     eleventyConfig.addShortcode("dynamicUrl", (tags) => {
         return `<pre class="dynamic-url">https://getoutofmyhead.dev/tests/` + tags.map(tag => {
             return `<span class="${tag.name}-url">${tag.name}</span>`
-        }).join('<span class="dash">-</span>') + `</pre>`
+        }).join('<span class="dash">-</span>') + `<span class="rich-url">-rich</span><span class="video-url">-video</span><span class="link-url">-link</span><span class="photo-url">-photo</span></pre>`
     })
 
     eleventyConfig.addTransform("htmlmin", function (content, outputPath) {

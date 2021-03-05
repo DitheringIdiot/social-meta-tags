@@ -2,12 +2,14 @@ const tags = [
     { name: "metadescription", title: "Meta Description" },
     { name: "microdata", title: "Schema.org Microdata" },
     { name: "jsonld", title: "Schema.org JSON-ld" },
-    { name: "oembed_xml", title: "oEmbed XML format" },
-    { name: "oembed_json_rich", title: "oEmbed JSON format | Rich" },
-    { name: "oembed_json_photo", title: "oEmbed JSON format | Photo" },
-    { name: "oembed_json_link", title: "oEmbed JSON format | Link" },
     { name: "opengraph", title: "Facebook Open Graph" },
-    { name: "twitter", title: "Twitter Card" }
+    { name: "twitter", title: "Twitter Card" },
+    { name: "oembed_xml", title: "oEmbed XML format", oembed: true },
+    { name: "oembed_json", title: "oEmbed JSON format", oembed: true }
+]
+
+const oEmbedTypes = [
+    "rich", "photo", "video", "link"
 ]
 
 // findCombinations() Code Taken from here:
@@ -30,8 +32,10 @@ const findCombinations = (arr) => {
                 temp.push(arr[j])
             }
         }
+
         result.push(temp)
     }
+
     return result
 }
 
@@ -55,7 +59,17 @@ combos.forEach(combo => {
         obj.slug = 'nothing'
     }
 
-    combinations.push(obj)
+    if (combo.some(item => item.oembed)) {
+        oEmbedTypes.forEach(type => {
+            let newObj = JSON.parse(JSON.stringify(obj))
+            newObj.oembedType = type
+            newObj.text += `| ${type}`
+            newObj.slug += `-${type}`
+            combinations.push(newObj)
+        })
+    } else {
+        combinations.push(obj)
+    }
 })
 
 // Creates a list of just the tag names

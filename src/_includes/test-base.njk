@@ -9,10 +9,15 @@
         {%- set title %}{{ renderData.title }}{% endset -%}
         {%- set description %}{{ renderData.description }}{% endset -%}
         {%- set url %}{{ renderData.url }}{% endset -%}
+        {%- set oembed_type %}{{ renderData.oembed_type }}{% endset -%}
 
         {% for tag in tagData.types %}
             {% if renderData[tag] === "true" %}
-                {% include tag + ".njk"%}
+                {% if tag === "oembed_xml" or tag === "oembed_json" %}
+                    {% include tag + "_" + oembed_type + ".njk" %}
+                {% else %}
+                    {% include tag + ".njk" %}
+                {% endif %}
             {% endif %}
         {% endfor %}
 
@@ -32,7 +37,15 @@
 
                 {%- set code %}
                 {% for tag in tagData.types %}
-                    {% if renderData[tag] === "true" %}{%- set tags %}{% include tag + ".njk"%}{% endset -%}{{ tags | safe }}
+                    {% if renderData[tag] === "true" %}
+                        {%- set tags %}
+                        {% if tag === "oembed_xml" or tag === "oembed_json" %}
+                            {% include tag + "_" + oembed_type + ".njk" %}
+                        {% else %}
+                            {% include tag + ".njk" %}
+                        {% endif %}
+                        {% endset -%}
+                        {{ tags | safe }}
                     {% endif %}
                 {% endfor %}
                 {% endset -%}

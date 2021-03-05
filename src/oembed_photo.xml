@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<oembed>
+	<version>1.0</version>
+	<type>photo</type>
+    <title>Preview Test | oEmbed XML Title</title>
+    <provider_name>oEmbed XML provider_name</provider_name>
+    <provider_url>https://getoutofmyhead.dev/</provider_url>
+    <author_name>oEmbed XML author_name</author_name>
+    <author_url>https://getoutofmyhead.dev?ref=author_url</author_url>
+    <url>https://getoutofmyhead.dev/previews/oembed_xml.png</url>
+    <width>1200</width>
+    <height>630</height>
+</oembed>
