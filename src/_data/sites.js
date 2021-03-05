@@ -7,8 +7,10 @@ module.exports = [
             metadescription: false,
             microdata: false,
             jsonld: false,
-            oembedxml: false,
-            oembedjson: false,
+            oembed_xml: false,
+            oembed_json_rich: false,
+            oembed_json_photo: null,
+            oembed_json_link: null,
             twitter: {
                 works: true,
                 note: "must use absolute urls"
@@ -33,10 +35,9 @@ module.exports = [
             microdata: false,
             jsonld: false,
             oembedxml: false,
-            oembedjson: {
-                works: false,
-                note: "double check this"
-            },
+            oembed_json_rich: null,
+            oembed_json_photo: null,
+            oembed_json_link: null,
             twitter: true,
             opengraph: true
         }
@@ -50,10 +51,12 @@ module.exports = [
             microdata: true,
             jsonld: {
                 works: false,
-                note: "double check this"
+                note: "double check this | odd that the microdata format works"
             },
-            oembedxml: false,
-            oembedjson: false,
+            oembed_xml_rich: null,
+            oembed_json_rich: null,
+            oembed_json_photo: null,
+            oembed_json_link: null,
             opengraph: true,
             twitter: true
         },
@@ -70,11 +73,10 @@ module.exports = [
             metadescription: true,
             microdata: false,
             jsonld: false,
-            oembedxml: false,
-            oembedjson: {
-                works: true,
-                note: "Only displayed title and url provider"
-            },
+            oembed_xml_rich: null,
+            oembed_json_rich: null,
+            oembed_json_photo: null,
+            oembed_json_link: null,
             opengraph: true,
             twitter: true,
         }

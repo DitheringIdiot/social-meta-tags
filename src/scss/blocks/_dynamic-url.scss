@@ -28,19 +28,35 @@ figure > .dynamic-url {
     display:inline;
 }
 
-#oembedxml:checked ~ figure > .dynamic-url > .oembedxml-url {
+#oembed_xml:checked ~ figure > .dynamic-url > .oembedxml-url {
     display:inline;
 }
 
-#oembedxml:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .oembedxml-url + .dash {
+#oembed_xml:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .oembed_xml-url + .dash {
     display:inline;
 }
 
-#oembedjson:checked ~ figure > .dynamic-url > .oembedjson-url {
+#oembed_json_rich:checked ~ figure > .dynamic-url > .oembed_json_rich-url {
     display:inline;
 }
 
-#oembedjson:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .oembedjson-url + .dash {
+#oembed_json_rich:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .oembed_json_rich-url + .dash {
+    display:inline;
+}
+
+#oembed_json_photo:checked ~ figure > .dynamic-url > .oembed_json_photo-url {
+    display:inline;
+}
+
+#oembed_json_photo:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .oembed_json_photo-url + .dash {
+    display:inline;
+}
+
+#oembed_json_link:checked ~ figure > .dynamic-url > .oembed_json_link-url {
+    display:inline;
+}
+
+#oembed_json_link:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .oembed_json_link-url + .dash {
     display:inline;
 }
 
