@@ -7,6 +7,7 @@
     "provider_name": "oEmbed JSON provider_name",
     "provider_url": "https://getoutofmyhead.dev/?ref=provider_url",
     "url": "https://getoutofmyhead.dev/previews/oembed_json.png",
+    "image": "https://getoutofmyhead.dev/previews/oembed_json.png",
     "width": 1200,
     "height": 630,
     "description": "oEmbed JSON Test Description. Description is not an official oEmbed key."

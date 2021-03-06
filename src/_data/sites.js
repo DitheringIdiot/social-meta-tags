@@ -205,12 +205,10 @@ module.exports = [
             oembed_xml_link: null,
             oembed_xml_rich: null,
             oembed_xml_video: null,
-            oembed_json_link: {
-                works: true,
-                note: "requires a non-official 'description' value to show description"
-            },
+            oembed_json_link: true,
             oembed_json_photo: false,
             oembed_json_rich: true,
+            oembed_json_video: true,
             twitter: true,
             opengraph: true
         }
