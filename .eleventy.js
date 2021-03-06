@@ -23,6 +23,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPassthroughCopy("./src/oembed_link.json")
     eleventyConfig.addPassthroughCopy("./src/oembed_photo.json")
     eleventyConfig.addPassthroughCopy("./src/oembed_video.json")
+    eleventyConfig.addPassthroughCopy("./src/test-opengraph-pointer.html")
     eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png")
     eleventyConfig.addWatchTarget("./src/css/")
 
@@ -72,8 +73,8 @@ module.exports = (eleventyConfig) => {
 
 
     let markdownLibrary = markdownIt({
-        html: true,
-    }).use(mia).use(markdownItAnchor, {
+        html: true
+    }).disable('code').use(mia).use(markdownItAnchor, {
         permalink: true,
         permalinkClass: "anchor",
         permalinkSymbol: "&nbsp;#",
@@ -157,12 +158,13 @@ module.exports = (eleventyConfig) => {
     })
 
 
+
     return {
         passthroughFileCopy: true,
+        markdownTemplateEngine: "njk",
         dir: {
             input: "src",
-            output: "public",
-            markdownTemplateEngine: "njk"
+            output: "public"
         }
     }
 }

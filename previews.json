@@ -16,6 +16,10 @@
       "imgName":"opengraph"
   },
   {
+      "title":"Open Graph Pointer",
+      "imgName":"opengraph_pointer"
+  },
+  {
       "title":"Twitter Card",
       "imgName":"twitter"
   },

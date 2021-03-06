@@ -40,6 +40,8 @@ Make faster, more accessible, more environmentally friendly websites, by removin
 * [Other](#other) 
   - [charset=utf-8](#charset-utf8)
   - [rel=preload](#rel-preload)
+  - [verification](#verification)
+  - [generator](#generator)
 
 
 </nav>
@@ -271,6 +273,20 @@ However, if these tags aren't present `windows` looks for `browserconfig.xml` at
 :::
 
 If no special `<meta>` tags or `browesrconfig.xml` is present. The tile will still look perfectly acceptable, using the site's `favicon` and `title`.
+
+</div>
+
+<div>
+
+## Sharing
+
+{% set table %}
+{% include 'results.njk' %}
+{% endset %}
+
+{{ table | safe }}
+
+
 
 </div>
 

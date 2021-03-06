@@ -1,0 +1,39 @@
+<table>
+
+    <tr>
+        <td colspan=4></td>
+        <td colspan=4>oEmbed XML</td>
+        <td colspan=4>oEmbed JSON</td>
+
+    </tr>
+
+    <tr>
+        <td></td>
+        {% for tag in tagData.resultsTable %}
+            <td>{{tag.title}}</td>
+        {% endfor %}
+
+    </tr>
+
+    {% for site in sites %}
+
+        <tr>
+            <td>{{site.name}}</td>
+
+            {% for tag in tagData.resultsTable %}
+
+                <td class="{{"yes" if site.tests[tag.name]}}{{"no" if not site.tests[tag.name]}}{{" unknown" if site.tests[tag.name] === null}}{{" but" if site.tests[tag.name].note }}">
+                    {% if site
+                        .tests[tag.name]
+                        .note %}
+                        <span>{{site.tests[tag.name].note}}</span>
+                    {% endif %}
+                </td>
+
+            {% endfor %}
+
+        </tr>
+
+    {% endfor %}
+
+</table>

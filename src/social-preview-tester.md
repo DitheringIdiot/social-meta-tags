@@ -1,7 +1,7 @@
 ---
 layout: "social-preview-tester.njk"
 title: "Social Preview Tester"
-style: "home"
+style: "social-preview-form"
 ---
 
 <div>

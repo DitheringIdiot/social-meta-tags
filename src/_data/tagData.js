@@ -3,6 +3,7 @@ const tags = [
     { name: "microdata", title: "Schema.org Microdata" },
     { name: "jsonld", title: "Schema.org JSON-ld" },
     { name: "opengraph", title: "Facebook Open Graph" },
+    { name: "opengraph_pointer", title: "Open Graph Pointer" },
     { name: "twitter", title: "Twitter Card" },
     { name: "oembed_xml", title: "oEmbed XML format", oembed: true },
     { name: "oembed_json", title: "oEmbed JSON format", oembed: true }
@@ -78,6 +79,7 @@ const types = tags.map(tag => tag.name)
 const resultsTable = [
     { name: 'title', title: '<title>' },
     { name: 'metadescription', title: 'meta desc.' },
+    { name: 'microdata', title: 'microdata' },
     { name: 'jsonld', title: 'json-ld' },
     { name: 'oembed_xml_link', title: 'Link' },
     { name: 'oembed_xml_photo', title: 'Photo' },
@@ -87,8 +89,9 @@ const resultsTable = [
     { name: 'oembed_json_photo', title: 'Photo' },
     { name: 'oembed_json_video', title: 'Video' },
     { name: 'oembed_json_rich', title: 'Rich' },
+    { name: 'twitter', title: 'Twitter Card' },
     { name: 'opengraph', title: 'Open Graph' },
-    { name: 'twitter', title: 'Twitter Card' }
+    { name: 'opengraph_pointer', title: 'Open Graph Pointer' }
 ]
 
 const tagData = {

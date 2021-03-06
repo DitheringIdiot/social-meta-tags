@@ -38,12 +38,16 @@ module.exports = [
             metadescription: true,
             microdata: false,
             jsonld: false,
-            oembed_xml_photo: null,
-            oembed_xml_link: null,
-            oembed_xml_rich: null,
-            oembed_xml_video: null,
+            oembed_xml_photo: false,
+            oembed_xml_link: false,
+            oembed_xml_rich: false,
+            oembed_xml_video: false,
             oembed_json_rich: false,
             oembed_json_photo: true,
+            oembed_json_video: {
+                works: true,
+                note: "shows thumbnail instead of video"
+            },
             oembed_json_link: {
                 works: true,
                 note: "requires a non-official 'description' value to show description"
@@ -159,10 +163,10 @@ module.exports = [
             metadescription: true,
             microdata: false,
             jsonld: false,
-            oembed_xml_photo: null,
-            oembed_xml_link: null,
-            oembed_xml_rich: null,
-            oembed_xml_video: null,
+            oembed_xml_photo: false,
+            oembed_xml_link: false,
+            oembed_xml_rich: false,
+            oembed_xml_video: false,
             oembed_json_link: false,
             oembed_json_photo: false,
             oembed_json_rich: false,
@@ -201,12 +205,12 @@ module.exports = [
             metadescription: false,
             microdata: false,
             jsonld: false,
-            oembed_xml_photo: null,
-            oembed_xml_link: null,
-            oembed_xml_rich: null,
-            oembed_xml_video: null,
+            oembed_xml_photo: false,
+            oembed_xml_link: false,
+            oembed_xml_rich: false,
+            oembed_xml_video: false,
             oembed_json_link: true,
-            oembed_json_photo: false,
+            oembed_json_photo: true,
             oembed_json_rich: true,
             oembed_json_video: true,
             twitter: true,
@@ -221,18 +225,147 @@ module.exports = [
             metadescription: false,
             microdata: false,
             jsonld: false,
-            oembed_xml_photo: null,
-            oembed_xml_link: null,
-            oembed_xml_rich: null,
-            oembed_xml_video: null,
+            oembed_xml_photo: false,
+            oembed_xml_link: false,
+            oembed_xml_rich: false,
+            oembed_xml_video: false,
             oembed_json_link: false,
-            oembed_json_photo: true,
+            oembed_json_photo: false,
             oembed_json_rich: false,
             twitter: false,
             opengraph: {
                 works: true,
-                note: "Title Only"
+                note: "Only uses title"
             }
+        }
+    },
+    {
+        name: "tumblr",
+        url: "",
+        tests: {
+            title: true,
+            metadescription: true,
+            microdata: false,
+            jsonld: false,
+            oembed_xml_photo: false,
+            oembed_xml_link: false,
+            oembed_xml_rich: false,
+            oembed_xml_video: false,
+            oembed_json_link: false,
+            oembed_json_photo: false,
+            oembed_json_rich: false,
+            oembed_json_video: false,
+            twitter: false,
+            opengraph: true
+        }
+    },
+    {
+        name: "pinterest",
+        url: "",
+        tests: {
+            title: false,
+            metadescription: false,
+            microdata: false,
+            jsonld: false,
+            oembed_xml_photo: false,
+            oembed_xml_link: false,
+            oembed_xml_rich: false,
+            oembed_xml_video: false,
+            oembed_json_link: false,
+            oembed_json_photo: false,
+            oembed_json_rich: false,
+            oembed_json_video: false,
+            twitter: false,
+            opengraph: true
+        }
+    },
+    {
+        name: "linked in",
+        url: "",
+        tests: {
+            title: true,
+            metadescription: true,
+            microdata: true,
+            jsonld: true,
+            oembed_xml_photo: {
+                works: true,
+                note: "doesn't show photo"
+            },
+            oembed_xml_link: true,
+            oembed_xml_rich: true,
+            oembed_xml_video: true,
+            oembed_json_link: true,
+            oembed_json_photo: {
+                works: true,
+                note: "doesn't show photo"
+            },
+            oembed_json_rich: true,
+            oembed_json_video: true,
+            twitter: {
+                works: true,
+                note: "no thumbnail"
+            },
+            opengraph: true
+        }
+    },
+    {
+        name: "viber",
+        url: "",
+        tests: {
+            title: true,
+            metadescription: false,
+            microdata: false,
+            jsonld: false,
+            oembed_xml_photo: false,
+            oembed_xml_link: false,
+            oembed_xml_rich: false,
+            oembed_xml_video: false,
+            oembed_json_link: false,
+            oembed_json_photo: false,
+            oembed_json_rich: false,
+            oembed_json_video: false,
+            twitter: true,
+            opengraph: true
+        }
+    },
+    {
+        name: "wechat",
+        url: "",
+        tests: {
+            title: null,
+            metadescription: null,
+            microdata: null,
+            jsonld: null,
+            oembed_xml_photo: null,
+            oembed_xml_link: null,
+            oembed_xml_rich: null,
+            oembed_xml_video: null,
+            oembed_json_link: null,
+            oembed_json_photo: null,
+            oembed_json_rich: null,
+            oembed_json_video: null,
+            twitter: null,
+            opengraph: null
+        }
+    },
+    {
+        name: "line",
+        url: "",
+        tests: {
+            title: null,
+            metadescription: null,
+            microdata: null,
+            jsonld: null,
+            oembed_xml_photo: null,
+            oembed_xml_link: null,
+            oembed_xml_rich: null,
+            oembed_xml_video: null,
+            oembed_json_link: null,
+            oembed_json_photo: null,
+            oembed_json_rich: null,
+            oembed_json_video: null,
+            twitter: null,
+            opengraph: null
         }
     }
 ]

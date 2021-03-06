@@ -60,6 +60,14 @@ figure > .dynamic-url {
     display:inline;
 }
 
+#opengraph_pointer:checked ~ figure > .dynamic-url > .opengraph_pointer-url {
+    display:inline;
+}
+
+#opengraph_pointer:checked ~ input[type="checkbox"]:checked ~ figure > .dynamic-url > .opengraph_pointer-url + .dash {
+    display:inline;
+}
+
 #twitter:checked ~ figure > .dynamic-url > .twitter-url {
     display:inline;
 }
