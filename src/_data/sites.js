@@ -15,14 +15,9 @@ module.exports = [
             oembed_json_photo: false,
             oembed_json_link: false,
             oembed_json_video: false,
-            twitter: {
-                works: true,
-                note: "must use absolute urls"
-            },
-            opengraph: {
-                works: true,
-                note: "must use absolute urls"
-            }
+            twitter: true,
+            opengraph: true,
+            opengraph_pointer: false
 
         }
 
@@ -53,7 +48,8 @@ module.exports = [
                 note: "requires a non-official 'description' value to show description"
             },
             twitter: true,
-            opengraph: true
+            opengraph: true,
+            opengraph_pointer: false
         }
     },
     {
@@ -76,6 +72,7 @@ module.exports = [
             oembed_json_link: false,
             oembed_json_video: false,
             opengraph: true,
+            opengraph_pointer: false,
             twitter: true
         },
         note: "Uses Apple Touch Icon if present at the root"
@@ -112,6 +109,7 @@ module.exports = [
                 note: "Does not show video."
             },
             opengraph: true,
+            opengraph_pointer: false,
             twitter: true,
         }
     },
@@ -171,7 +169,8 @@ module.exports = [
             oembed_json_photo: false,
             oembed_json_rich: false,
             twitter: false,
-            opengraph: true
+            opengraph: true,
+            opengraph_pointer: false
         }
     },
     {
@@ -194,7 +193,8 @@ module.exports = [
             oembed_json_rich: false,
             oembed_json_video: false,
             twitter: true,
-            opengraph: true
+            opengraph: true,
+            opengraph_pointer: false
         }
     },
     {
@@ -214,7 +214,8 @@ module.exports = [
             oembed_json_rich: true,
             oembed_json_video: true,
             twitter: true,
-            opengraph: true
+            opengraph: true,
+            opengraph_pointer: false
         }
     },
     {
@@ -236,7 +237,8 @@ module.exports = [
             opengraph: {
                 works: true,
                 note: "Only uses title"
-            }
+            },
+            opengraph_pointer: false
         }
     },
     {
@@ -256,7 +258,8 @@ module.exports = [
             oembed_json_rich: false,
             oembed_json_video: false,
             twitter: false,
-            opengraph: true
+            opengraph: true,
+            opengraph_pointer: null
         }
     },
     {
@@ -276,7 +279,8 @@ module.exports = [
             oembed_json_rich: false,
             oembed_json_video: false,
             twitter: false,
-            opengraph: true
+            opengraph: true,
+            opengraph_pointer: false
         }
     },
     {
@@ -305,7 +309,8 @@ module.exports = [
                 works: true,
                 note: "no thumbnail"
             },
-            opengraph: true
+            opengraph: true,
+            opengraph_pointer: null
         }
     },
     {
@@ -325,7 +330,8 @@ module.exports = [
             oembed_json_rich: false,
             oembed_json_video: false,
             twitter: true,
-            opengraph: true
+            opengraph: true,
+            opengraph_pointer: null
         }
     },
     {
@@ -352,20 +358,21 @@ module.exports = [
         name: "line",
         url: "",
         tests: {
-            title: null,
-            metadescription: null,
-            microdata: null,
-            jsonld: null,
-            oembed_xml_photo: null,
-            oembed_xml_link: null,
-            oembed_xml_rich: null,
-            oembed_xml_video: null,
-            oembed_json_link: null,
-            oembed_json_photo: null,
-            oembed_json_rich: null,
-            oembed_json_video: null,
-            twitter: null,
-            opengraph: null
+            title: true,
+            metadescription: true,
+            microdata: false,
+            jsonld: false,
+            oembed_xml_photo: false,
+            oembed_xml_link: false,
+            oembed_xml_rich: false,
+            oembed_xml_video: false,
+            oembed_json_link: false,
+            oembed_json_photo: false,
+            oembed_json_rich: false,
+            oembed_json_video: false,
+            twitter: true,
+            opengraph: true,
+            opengraph_pointer: false
         }
     }
 ]
