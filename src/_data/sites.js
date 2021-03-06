@@ -10,11 +10,11 @@ module.exports = [
             oembed_xml_photo: false,
             oembed_xml_link: false,
             oembed_xml_rich: false,
-            oembed_xml_video: null,
+            oembed_xml_video: false,
             oembed_json_rich: false,
             oembed_json_photo: false,
             oembed_json_link: false,
-            oembed_json_video: null,
+            oembed_json_video: false,
             twitter: {
                 works: true,
                 note: "must use absolute urls"
@@ -63,13 +63,14 @@ module.exports = [
                 works: false,
                 note: "double check this | odd that the microdata format works"
             },
-            oembed_xml_photo: null,
-            oembed_xml_link: null,
-            oembed_xml_rich: null,
-            oembed_xml_video: null,
+            oembed_xml_photo: false,
+            oembed_xml_link: false,
+            oembed_xml_rich: false,
+            oembed_xml_video: false,
             oembed_json_rich: false,
             oembed_json_photo: false,
             oembed_json_link: false,
+            oembed_json_video: false,
             opengraph: true,
             twitter: true
         },
@@ -87,6 +88,9 @@ module.exports = [
             microdata: false,
             jsonld: false,
             oembed_xml_rich: false,
+            oembed_xml_video: false,
+            oembed_xml_link: false,
+            oembed_xml_photo: false,
             oembed_json_rich: {
                 works: true,
                 note: "Does not show thumbnail."
@@ -98,6 +102,10 @@ module.exports = [
             oembed_json_link: {
                 works: true,
                 note: "Does not show thumbnail."
+            },
+            oembed_json_video: {
+                works: true,
+                note: "Does not show video."
             },
             opengraph: true,
             twitter: true,
@@ -173,13 +181,14 @@ module.exports = [
             metadescription: true,
             microdata: true,
             jsonld: false,
-            oembed_xml_photo: null,
-            oembed_xml_link: null,
-            oembed_xml_rich: null,
-            oembed_xml_video: null,
+            oembed_xml_photo: false,
+            oembed_xml_link: false,
+            oembed_xml_rich: false,
+            oembed_xml_video: false,
             oembed_json_link: false,
             oembed_json_photo: false,
             oembed_json_rich: false,
+            oembed_json_video: false,
             twitter: true,
             opengraph: true
         }
