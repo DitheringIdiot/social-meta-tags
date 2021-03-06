@@ -6,8 +6,8 @@
     "author_url": "https://getoutofmyhead.dev?ref=author_url",
     "provider_name": "oEmbed JSON provider_name",
     "provider_url": "https://getoutofmyhead.dev?ref=provider_url",
-    "thumbnail_url": "https://getoutofmyhead.dev/previews/oembed_json_link.png",
+    "thumbnail_url": "https://getoutofmyhead.dev/previews/oembed_json.png",
     "thumbnail_width": 1200,
     "thumbnail_height": 630,
-    "description": "oEmbed Test Description. Description is not an official oEmbed key."
+    "description": "oEmbed JSON Test Description. Description is not an official oEmbed key."
 }

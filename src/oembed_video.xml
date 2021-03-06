@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <oembed>
 	<version>1.0</version>
-	<type>link</type>
+	<type>video</type>
     <title>Preview Test | oEmbed XML Title</title>
     <description>oEmbed XML Test Description. Description is not an official oEmbed key.</description>
     <provider_name>oEmbed XML provider_name</provider_name>
     <provider_url>https://getoutofmyhead.dev/</provider_url>
-    <author_name>oEmbed XML author_name</author_name>
-    <author_url>https://getoutofmyhead.dev?ref=author_url</author_url>
     <thumbnail_url>https://getoutofmyhead.dev/previews/oembed_xml.png</thumbnail_url>
     <thumbnail_width>600</thumbnail_width>
     <thumbnail_height>275</thumbnail_height>
+    <html>&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/dQw4w9WgXcQ&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;</html>
+    <width>560</width>
+    <height>315</height>
 </oembed>

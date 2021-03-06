@@ -3,6 +3,7 @@
 	<version>1.0</version>
 	<type>rich</type>
     <title>Preview Test | oEmbed XML Title</title>
+        <description>oEmbed XML Test Description. Description is not an official oEmbed key.</description>
     <provider_name>oEmbed XML provider_name</provider_name>
     <provider_url>https://getoutofmyhead.dev/</provider_url>
     <thumbnail_url>https://getoutofmyhead.dev/previews/oembed_xml.png</thumbnail_url>

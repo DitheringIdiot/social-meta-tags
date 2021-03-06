@@ -27,6 +27,20 @@ table {
             background:orange;
         }
 
+        span {
+            position:absolute;
+            background:get-color('base');
+            padding:get-size('200');
+            pointer-events:none;
+            opacity:0;
+        }
+
+        &:hover {
+            span {
+                opacity:1;
+            }
+        }
+
         
     }
 }

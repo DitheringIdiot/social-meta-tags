@@ -7,12 +7,14 @@ module.exports = [
             metadescription: false,
             microdata: false,
             jsonld: false,
-            oembed_xml_photo: null,
-            oembed_xml_link: null,
-            oembed_xml_rich: null,
+            oembed_xml_photo: false,
+            oembed_xml_link: false,
+            oembed_xml_rich: false,
+            oembed_xml_video: null,
             oembed_json_rich: false,
-            oembed_json_photo: null,
+            oembed_json_photo: false,
             oembed_json_link: false,
+            oembed_json_video: null,
             twitter: {
                 works: true,
                 note: "must use absolute urls"
@@ -39,6 +41,7 @@ module.exports = [
             oembed_xml_photo: null,
             oembed_xml_link: null,
             oembed_xml_rich: null,
+            oembed_xml_video: null,
             oembed_json_rich: false,
             oembed_json_photo: true,
             oembed_json_link: {
@@ -63,6 +66,7 @@ module.exports = [
             oembed_xml_photo: null,
             oembed_xml_link: null,
             oembed_xml_rich: null,
+            oembed_xml_video: null,
             oembed_json_rich: false,
             oembed_json_photo: false,
             oembed_json_link: false,
@@ -110,9 +114,11 @@ module.exports = [
             oembed_xml_photo: null,
             oembed_xml_link: null,
             oembed_xml_rich: null,
+            oembed_xml_video: null,
             oembed_json_link: null,
             oembed_json_photo: null,
             oembed_json_rich: null,
+            oembed_json_video: null,
             twitter: null,
             opengraph: null
         }
@@ -128,9 +134,11 @@ module.exports = [
             oembed_xml_photo: null,
             oembed_xml_link: null,
             oembed_xml_rich: null,
+            oembed_xml_video: null,
             oembed_json_link: null,
             oembed_json_photo: null,
             oembed_json_rich: null,
+            oembed_json_video: null,
             twitter: null,
             opengraph: null
         }
@@ -146,6 +154,7 @@ module.exports = [
             oembed_xml_photo: null,
             oembed_xml_link: null,
             oembed_xml_rich: null,
+            oembed_xml_video: null,
             oembed_json_link: false,
             oembed_json_photo: false,
             oembed_json_rich: false,
@@ -167,6 +176,7 @@ module.exports = [
             oembed_xml_photo: null,
             oembed_xml_link: null,
             oembed_xml_rich: null,
+            oembed_xml_video: null,
             oembed_json_link: false,
             oembed_json_photo: false,
             oembed_json_rich: false,
@@ -185,6 +195,7 @@ module.exports = [
             oembed_xml_photo: null,
             oembed_xml_link: null,
             oembed_xml_rich: null,
+            oembed_xml_video: null,
             oembed_json_link: {
                 works: true,
                 note: "requires a non-official 'description' value to show description"
@@ -206,6 +217,7 @@ module.exports = [
             oembed_xml_photo: null,
             oembed_xml_link: null,
             oembed_xml_rich: null,
+            oembed_xml_video: null,
             oembed_json_link: false,
             oembed_json_photo: true,
             oembed_json_rich: false,
@@ -229,9 +241,11 @@ module.exports = [
 //         oembed_xml_photo: null,
 //         oembed_xml_link: null,
 //         oembed_xml_rich: null,
-//         oembed_json_link: null,
-//         oembed_json_photo: null,
-//         oembed_json_rich: null,
+// oembed_xml_video: null,
+    //         oembed_json_link: null,
+    //         oembed_json_photo: null,
+    //         oembed_json_rich: null,
+    //oembed_json_video: null,
 //         twitter: null,
 //         opengraph: null
 //     }

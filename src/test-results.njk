@@ -8,19 +8,18 @@ style: results
 <table>
 
     <tr>
+        <td colspan=4></td>
+        <td colspan=4>oEmbed XML</td>
+        <td colspan=4>oEmbed JSON</td>
+
+    </tr>
+
+    <tr>
         <td></td>
-        <td>&lt;title&gt;</td>
-        <td>meta desc.</td>
-        <td>microdata</td>
-        <td>json-ld</td>
-        <td>oEmbed XML Link</td>
-        <td>oEmbed XML Photo</td>
-        <td>oEmbed XML Rich</td>
-        <td>oEmbed JSON Link</td>
-        <td>oEmbed JSON Photo</td>
-        <td>oEmbed JSON Rich</td>
-        <td>Twitter Cards</td>
-        <td>Facebook Open Graph</td>
+        {% for tag in tagData.resultsTable %}
+            <td>{{tag.title}}</td>
+        {% endfor %}
+
     </tr>
 
     {% for site in sites %}
@@ -28,20 +27,17 @@ style: results
         <tr>
             <td>{{site.name}}</td>
 
-            <td class="{{"yes" if site.tests.title}}{{"no" if not site.tests.title}}{{" unknown" if site.tests.title === null}}{{" but" if site.tests.title.note }}">{{"*" if site.tests.title.note}}</td>
-            <td class="{{"yes" if site.tests.metadescription}}{{"no" if not site.tests.metadescription}}{{" unknown" if site.tests.metadescription === null}}{{" but" if site.tests.metadescription.note }}">{{"*" if site.tests.metadescription.note}}</td>
-            <td class="{{"yes" if site.tests.microdata}}{{"no" if not site.tests.microdata}}{{" unknown" if site.tests.microdata === null}}{{" but" if site.tests.microdata.note }}">{{"*" if site.tests.microdata.note}}</td>
-            <td class="{{"yes" if site.tests.jsonld}}{{"no" if not site.tests.jsonld}}{{" unknown" if site.tests.jsonld === null}}{{" but" if site.tests.jsonld.note }}">{{"*" if site.tests.jsonld.note}}</td>
-            <td class="{{"yes" if site.tests.oembed_xml_link}}{{"no" if not site.tests.oembed_xml_link}}{{" unknown" if site.tests.oembed_xml_link === null}}{{" but" if site.tests.oembed_xml_link.note }}">{{"*" if site.tests.oembed_xml_link.note}}</td>
-            <td class="{{"yes" if site.tests.oembed_xml_photo}}{{"no" if not site.tests.oembed_xml_photo}}{{" unknown" if site.tests.oembed_xml_photo === null}}{{" but" if site.tests.oembed_xml_photo.note }}">{{"*" if site.tests.oembed_xml_photo.note}}</td>
-            <td class="{{"yes" if site.tests.oembed_xml_rich}}{{"no" if not site.tests.oembed_xml_rich}}{{" unknown" if site.tests.oembed_xml_rich === null}}{{" but" if site.tests.oembed_xml_rich.note }}">{{"*" if site.tests.oembed_xml_rich.note}}</td>
+            {% for tag in tagData.resultsTable %}
 
-            <td class="{{"yes" if site.tests.oembed_json_link}}{{"no" if not site.tests.oembed_json_link}}{{" unknown" if site.tests.oembed_json_link === null}}{{" but" if site.tests.oembed_json_link.note }}">{{"*" if site.tests.oembed_json_link.note}}</td>
-            <td class="{{"yes" if site.tests.oembed_json_photo}}{{"no" if not site.tests.oembed_json_photo}}{{" unknown" if site.tests.oembed_json_photo === null}}{{" but" if site.tests.oembed_json_photo.note }}">{{"*" if site.tests.oembed_json_photo.note}}</td>
-            <td class="{{"yes" if site.tests.oembed_json_rich}}{{"no" if not site.tests.oembed_json_rich}}{{" unknown" if site.tests.oembed_json_rich === null}}{{" but" if site.tests.oembed_json_rich.note }}">{{"*" if site.tests.oembed_json_rich.note}}</td>
+                <td class="{{"yes" if site.tests[tag.name]}}{{"no" if not site.tests[tag.name]}}{{" unknown" if site.tests[tag.name] === null}}{{" but" if site.tests[tag.name].note }}">
+                    {% if site
+                        .tests[tag.name]
+                        .note %}
+                        <span>{{site.tests[tag.name].note}}</span>
+                    {% endif %}
+                </td>
 
-            <td class="{{"yes" if site.tests.twitter}}{{"no" if not site.tests.twitter}}{{" unknown" if site.tests.twitter === null}}{{" but" if site.tests.twitter.note }}">{{"*" if site.tests.twitter.note}}</td>
-            <td class="{{"yes" if site.tests.opengraph}}{{"no" if not site.tests.opengraph}}{{" unknown" if site.tests.opengraph === null}}{{" but" if site.tests.opengraph.note }}">{{"*" if site.tests.opengraph.note}}</td>
+            {% endfor %}
 
         </tr>
 

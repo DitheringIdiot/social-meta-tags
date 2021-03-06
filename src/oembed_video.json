@@ -1,6 +1,6 @@
 {
     "version": "1.0",
-    "type": "rich",
+    "type": "video",
     "title": "Preview Test | oEmbed JSON Title",
     "provider_name": "oEmbed JSON provider_name",
     "provider_url": "https://getoutofmyhead.dev/",
@@ -9,8 +9,8 @@
     "thumbnail_url": "https://getoutofmyhead.dev/previews/oembed_json.png",
     "thumbnail_width": 1200,
     "thumbnail_height": 630,
-    "html": "<blockquote>Preview Test | oEmbed JSON Description — This description came from oEmbed in JSON format.<\/blockquote>",
-    "width": 600,
-    "height": 300,
+    "html": "<iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/dQw4w9WgXcQ\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen><\/iframe>",
+    "width": 560,
+    "height": 315,
     "description": "oEmbed JSON Test Description. Description is not an official oEmbed key."
 }

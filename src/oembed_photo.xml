@@ -3,6 +3,7 @@
 	<version>1.0</version>
 	<type>photo</type>
     <title>Preview Test | oEmbed XML Title</title>
+        <description>oEmbed XML Test Description. Description is not an official oEmbed key.</description>
     <provider_name>oEmbed XML provider_name</provider_name>
     <provider_url>https://getoutofmyhead.dev/</provider_url>
     <author_name>oEmbed XML author_name</author_name>

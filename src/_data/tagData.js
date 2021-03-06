@@ -75,12 +75,27 @@ combos.forEach(combo => {
 // Creates a list of just the tag names
 const types = tags.map(tag => tag.name)
 
-
+const resultsTable = [
+    { name: 'title', title: '<title>' },
+    { name: 'metadescription', title: 'meta desc.' },
+    { name: 'jsonld', title: 'json-ld' },
+    { name: 'oembed_xml_link', title: 'Link' },
+    { name: 'oembed_xml_photo', title: 'Photo' },
+    { name: 'oembed_xml_video', title: 'Video' },
+    { name: 'oembed_xml_rich', title: 'Rich' },
+    { name: 'oembed_json_link', title: 'Link' },
+    { name: 'oembed_json_photo', title: 'Photo' },
+    { name: 'oembed_json_video', title: 'Video' },
+    { name: 'oembed_json_rich', title: 'Rich' },
+    { name: 'opengraph', title: 'Open Graph' },
+    { name: 'twitter', title: 'Twitter Card' }
+]
 
 const tagData = {
     combinations,
     types,
-    tags
+    tags,
+    resultsTable
 }
 
 
