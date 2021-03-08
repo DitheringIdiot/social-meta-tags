@@ -25,6 +25,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPassthroughCopy("./src/oembed_video.json")
     eleventyConfig.addPassthroughCopy("./src/test-opengraph-pointer.html")
     eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png")
+    eleventyConfig.addPassthroughCopy("./src/robots.txt")
     eleventyConfig.addWatchTarget("./src/css/")
 
     eleventyConfig.addPlugin(pluginRss)
@@ -41,6 +42,10 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPairedShortcode("trimwhitespace", (content) => {
         //return content
         return content.split('<br>').map(line => line.trim()).join('\n').replace(/(\r\n|\r|\n){2,}/g, '$1\n')
+    })
+
+    eleventyConfig.addPairedShortcode("removewhitespace", (content) => {
+        return content.replace(/\s+/g, ' ').trim()
     })
 
     eleventyConfig.addShortcode("dynamicUrl", (tags) => {
@@ -73,7 +78,8 @@ module.exports = (eleventyConfig) => {
 
 
     let markdownLibrary = markdownIt({
-        html: true
+        html: true,
+        breaks: false
     }).disable('code').use(mia).use(markdownItAnchor, {
         permalink: true,
         permalinkClass: "anchor",

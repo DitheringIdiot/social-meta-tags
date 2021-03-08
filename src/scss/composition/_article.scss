@@ -12,23 +12,13 @@ h1, h2, h3, h4 {
 }
 
 
-h1, h2, h3 {
-    
-    text-transform:uppercase;
+h1, h1 > code > span, h2, h3 {
     filter:url("#xs");
-
-    @include media-query('lg') {
-        filter:url("#x");
-    }
 }
 
-h1 {
-    font-size:get-size('800')
-}
-
-h2 {
-    font-size:get-size('800');
-    color:var(--heading);
+h1, h2 {
+    font-size:get-size('900');
+        color:var(--heading);
 }
 
 h3 {
@@ -88,7 +78,7 @@ ol {
             height:get-size('400');
             font-size:get-size('300');
             margin-top:0.3rem;
-            background:get-color('base-shade');
+            background:get-color('shade');
             display:flex;
             justify-content:center;
             align-items: center;

@@ -129,6 +129,7 @@ module.exports = [
             oembed_json_photo: null,
             oembed_json_rich: null,
             oembed_json_video: null,
+            opengraph_pointer: null,
             twitter: null,
             opengraph: null
         }
@@ -150,7 +151,8 @@ module.exports = [
             oembed_json_rich: null,
             oembed_json_video: null,
             twitter: null,
-            opengraph: null
+            opengraph: null,
+            opengraph_pointer: null,
         }
     },
     {
@@ -284,7 +286,7 @@ module.exports = [
         }
     },
     {
-        name: "linked in",
+        name: "linkedin",
         url: "",
         tests: {
             title: true,
@@ -332,26 +334,6 @@ module.exports = [
             twitter: true,
             opengraph: true,
             opengraph_pointer: null
-        }
-    },
-    {
-        name: "wechat",
-        url: "",
-        tests: {
-            title: null,
-            metadescription: null,
-            microdata: null,
-            jsonld: null,
-            oembed_xml_photo: null,
-            oembed_xml_link: null,
-            oembed_xml_rich: null,
-            oembed_xml_video: null,
-            oembed_json_link: null,
-            oembed_json_photo: null,
-            oembed_json_rich: null,
-            oembed_json_video: null,
-            twitter: null,
-            opengraph: null
         }
     },
     {

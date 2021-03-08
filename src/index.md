@@ -2,15 +2,14 @@
 layout: "home.njk"
 title: "Home"
 style: "home"
+templateEngineOverride: njk, md
 ---
 
 ::: header
 
-# Get out of my `<head>`
+<h1> Get out of my <code><span>&lt;head&gt;</span></code></h1>
 
 Make faster, more accessible, more environmentally friendly websites, by removing these tags from your `<head>`.
-
-…and what to replace the tags with.
 
 ::: 
 
@@ -40,6 +39,7 @@ Make faster, more accessible, more environmentally friendly websites, by removin
 * [Other](#other) 
   - [charset=utf-8](#charset-utf8)
   - [rel=preload](#rel-preload)
+  - [http-equiv=X-UA-Compatible](#http-equiv=x-ua-compatible)
   - [verification](#verification)
   - [generator](#generator)
 
@@ -280,12 +280,16 @@ If no special `<meta>` tags or `browesrconfig.xml` is present. The tile will sti
 
 ## Sharing
 
+
 {% set table %}
+
 {% include 'results.njk' %}
+
 {% endset %}
 
+{% removewhitespace %}
 {{ table | safe }}
-
+{% endremovewhitespace %}
 
 
 </div>
@@ -550,3 +554,90 @@ A `301 redirect` sends traffic and search engines to your preferred `url`. No ne
 
 </div>
 
+
+
+<div>
+
+## Other
+
+Some tags that just wormed their way in somehow.
+
+</div>
+
+<div>
+
+### http-equiv="X-UA-Compatible"
+
+This tag is used to tell `Internet Explorer` to use the latest rendering engine:
+
+:::
+
+<figcaption>X-UA-Compatible meta tag from cnn.com</figcaption>
+
+```html
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+```
+
+:::
+
+Great, we want everyone to get the best experience possible. Except [`Internet Explorer` already uses the latest rendering engine — so long as you have correctly declared your `<!DOCTYPE>`.](https://docs.microsoft.com/en-us/openspecs/ie_standards/ms-iedoco/3764531c-97c8-4bf2-bdc6-b3623738ea46)
+
+
+
+</div>
+
+
+<div>
+
+### HandheldFriendly
+
+
+The handheld friendly `<meta>` tag was created by `AvantGo`. If it wasn't present the browser would [remove `JavaScript`, `<table>`, and "certain image tags".](https://web.archive.org/web/20000903162014/http://avantgo.com/developer/reference/tutorials/jumpstart/jumpstart2.html#TOC3) from the page:
+
+::: 
+
+<figcaption>HandheldFriendly Meta Tag</figcaption>
+
+```html
+<meta name="HandheldFriendly" content="True">
+```
+:::
+
+`AvantGo` was used on `Palm Pilots` between [2000-2009](https://web.archive.org/web/20180614094913/http://www.palminfocenter.com/news/6884/avantgo-going-away/). It was more of an `RSS` feed than a browser. 
+
+By using the `HandheldFriendly` tag you're telling the 1 person in the world that still uses `AvantGo` that you made your website compatible with their palm pilot. Which would be a lie!
+
+The only other browser that I could find uses it was the BlackBerry Browser. Before [`Blackberry OS 4.5` released in `2008`](https://uk.pcmag.com/operating-systems/6564/blackberry-os-45). The browser would render a page in `Column View` if `<meta name="HandheldFriendly" content="true">` wasn't present. 
+
+However, **Blackberry Browser also supported `<meta name="viewport" content="width=device-width">` [which had the same effect!](https://www.manualslib.com/manual/368374/Blackberry-Browser-Version-4-7-0-Fundamentals-Guide.html?page=18#manual)**
+
+If anyone is still using these browsers, let their devices render your content in the default way.
+
+</div>
+
+
+<div>
+
+  ### Validation & Verification
+
+
+  Some online tools like `Google Search Console` and `Bing Webmaster Tools` require you to prove that you're the owner of your website before you can use them.
+  One way of doing this is by adding a `<meta>` tag to your site with a code specific to you.
+
+  :::
+
+  <figcaption>Bing Validation from bbc.com</figcaption>
+
+  ```html
+  <meta name="msvalidate.01" content="A09EF0BF1FC5CDBB37D921CBC3776943">
+  ```
+
+  :::
+
+  Bing offers three other ways to verify websites.
+  
+  - `DNS` Record
+  - a file in your root directory
+  - Import from `Google Search Console`
+
+</div>

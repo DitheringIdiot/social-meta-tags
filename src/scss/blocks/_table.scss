@@ -1,30 +1,40 @@
 table {
     margin-left: auto;
     margin-right: auto;
-    max-width:none;
+    max-width:100%;
     overflow-y: hidden;
     overflow-x:scroll;
 
     font-size:get-size('200');
     font-family:var(--mono);
+    border-collapse: collapse;
+    text-align:center;
 
     td {
         width:get-size('800');
+        border:solid 1px var(--shade);
+        color:var(--code-text);
+        background:var(--code-bg);
 
         &.yes {
-            background:green;
+            background:#7ec699;
         }
 
         &.no {
-            background:red;
+            background:#e2777a;
         }
 
         &.unknown {
-            background:grey;
+            background:#ccc;
         }
 
         &.but {
-            background:orange;
+            background:#f8c555;
+        }
+
+        &.empty {
+            border:0;
+            background:transparent;
         }
 
         span {
