@@ -4,7 +4,7 @@ permalinkBypassOutputDir: true
 eleventyExcludeFromCollections: true
 ---
 [
-{%- for tag in tagData.tags %}
+{%- for tag in tagData %}
   {
       "title":"{{ tag.title | safe }}",
       "imgName":"{{ tag.name | safe }}"
