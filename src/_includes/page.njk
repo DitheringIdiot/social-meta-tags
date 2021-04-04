@@ -1,0 +1,19 @@
+---
+layout: "base.njk"
+style: "home"
+---
+
+<header class="site-head">
+    <a href="/">Get out of my <code>
+            <span>&lt;head&gt;</span></code>
+    </a>
+</header>
+
+<main>
+    {{ content | safe }}
+</main>
+
+<nav class="footer-nav">
+    <a class="previous" href="{{previousLink}}">☚ {{previousText}}</a>
+    <a class="next" href="{{nextLink}}">{{nextText}} ☛</a>
+</nav>

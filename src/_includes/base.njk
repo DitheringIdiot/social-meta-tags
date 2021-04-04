@@ -14,11 +14,9 @@
     </head>
 
     <body>
-        <main>
-            <article>
-                {{ content | safe }}
-            </article>
-        </main>
+
+        {{ content | safe }}
+
         <svg class="hidden">
             <filter id="x">
                 <feTurbulence baseFrequency="0.01 0.02" numOctaves="2" result="t0"></feTurbulence>
@@ -42,5 +40,15 @@
                 <feOffset in="1" dx="-3" dy="-3"/>
             </filter>
         </svg>
+
+        {% if script %}
+            {% set js %}
+            {% include script %}
+            {% endset %}
+
+            <script>
+                {{ js | safe }}
+            </script>
+        {% endif %}
     </body>
 </html>

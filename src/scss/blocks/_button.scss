@@ -1,0 +1,15 @@
+button {
+    text-transform: uppercase;
+    background:var(--highlight);
+    border:solid 2px var(--text);
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:get-size('300');
+    font-family:var(--mono);
+    border-radius:4px;
+    box-shadow:0 2px var(--shade);
+    color:var(--glare);
+    cursor: pointer;
+}

@@ -1,28 +1,37 @@
-/* HEADINGS */
-article {
-    h1, h2, h3, h4, aside {
-        margin-top:get-size('900');
-        position: relative;
-    }
-}
+/* highlightS */
+
 
 h1, h2, h3, h4 {
      line-height: 1.2;
      font-family:var(--sans);
+      color:var(--highlight);
+}
+
+main > * + * {
+    margin-top:get-size('500')
+}
+
+h2,h3,h4 {
+    margin-top:get-size('900');
+    margin-bottom:get-size('500')
 }
 
 
-h1, h1 > code > span, h2, h3 {
+h1, h1 > code > span, h2, h3 { // horrible
     filter:url("#xs");
 }
 
-h1, h2 {
-    font-size:get-size('900');
-        color:var(--heading);
+h1 {
+    font-size:get-size('1000');
+    margin-bottom:0;
+}
+
+h2 {
+    font-size:get-size('700');
 }
 
 h3 {
-    font-size:get-size('700')
+    font-size:get-size('600')
 }
 
 h4 {
@@ -117,9 +126,9 @@ nav > ul > li {
 
 /* SUPERSCRIPT */
 
-sup {
+p sup {
     background:get-color("shade");
-    color:get-color('text');
+    color:inherit;
     display:inline-flex;
     justify-content: center;
     align-items: center;
@@ -137,11 +146,10 @@ sup {
 
 a {
     color:inherit;
-    text-decoration: underline;
-    text-decoration-style:dotted;
-    text-decoration-color:var(--highlight);
+    text-decoration:none;
     &:hover {
-       text-decoration-style:solid;
+       background:var(--highlight-glare);
+       box-shadow:0 0 0 .1em var(--highlight-glare);
     }
 }
 
@@ -159,33 +167,39 @@ h1, h2, h3, h4 {
     }
 }
 
-/* ARTICLE */
-
-aside {
-    border:solid 2px var(--shade);
-    padding:get-size('200');
-
-    & > *:first-child {
-        margin:0;
-    }
+main > div {
+    @extend .wrapper;
 }
 
-article > div {
-    padding:get-size('600') get-size('300');
-}
-
-article > div:nth-child(even) {
+main > div:nth-child(even) {
     background:var(--shade);
 
     code {
         background:var(--base);
     }
 
-     pre > code { // This is ugly.
-    background:transparent;
+     pre > code {
+        background:transparent;
     }
 
     aside {
         border-color:var(--base);
+    }
+}
+
+
+.lead {
+    line-height:1.3;
+    font-size:get-size('600');
+    margin-top:0;
+    margin-bottom:get-size('600');
+    span {
+        -webkit-box-decoration-break:clone;
+        box-decoration-break:clone;
+        padding:.1em .3em;
+        background:var(--highlight);
+        color:var(--glare);
+        font-style: italic;
+         filter:url("#xs");
     }
 }

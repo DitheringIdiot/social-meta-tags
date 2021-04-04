@@ -1,11 +1,11 @@
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"] {
     position: absolute;
-    left:-9999px;
-    opacity:0;
+    right:1rem;
+    opacity:0.001;
     pointer-events: none;
 }
 
-.checkbox, .radio {
+.checkbox {
     display:flex;
     align-items: center;
     justify-content: space-between;
@@ -16,8 +16,7 @@ input[type="checkbox"], input[type="radio"] {
     cursor: pointer;
     font-family:var(--mono);
 
-    &:after {
-        content:"✔";
+    b {
         height:24px;
         width:24px;
         border:solid 2px var(--text);
@@ -34,39 +33,9 @@ input[type="checkbox"], input[type="radio"] {
     }
 }
 
-.radio {
-    &:after {
-        content:"";
-        border-radius:9rem;
-    }
-}
 
-input[type="checkbox"]:checked + .checkbox, input[type=radio]:checked + .radio {
+input[type="checkbox"]:checked ~ b, input[type=radio]:checked ~ b {
 
-    &:after {
     color:var(--text);
-    }
 
-}
-
-input[type=radio]:checked + .radio:after {
-    background:var(--text);
-    box-shadow:0 2px var(--shade), inset 0 0 0 2px var(--base);
-}
-
-.radio-group-top {
-    border-radius:4px 4px 0 0;
-    border-bottom:0;
-}
-
-.radio-group-middle {
-    margin-top:0;
-    border-radius:0;
-    border-bottom:0;
-}
-
-.radio-group-bottom {
-    border-radius:0 0 4px 4px;
-    border-bottom:solid 2px var(--shade);
-    margin-top:0;
 }

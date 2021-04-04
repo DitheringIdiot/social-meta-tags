@@ -28,7 +28,7 @@ module.exports = [
         tests: {
             title: {
                 works: true,
-                note: "only in conjunction with metadescription"
+                note: "1"
             },
             metadescription: true,
             microdata: false,
@@ -39,13 +39,10 @@ module.exports = [
             oembed_xml_video: false,
             oembed_json_rich: false,
             oembed_json_photo: true,
-            oembed_json_video: {
-                works: true,
-                note: "shows thumbnail instead of video"
-            },
+            oembed_json_video: true,
             oembed_json_link: {
                 works: true,
-                note: "requires a non-official 'description' value to show description"
+                note: "3"
             },
             twitter: true,
             opengraph: true,
@@ -59,10 +56,7 @@ module.exports = [
             title: true,
             metadescription: false,
             microdata: true,
-            jsonld: {
-                works: false,
-                note: "double check this | odd that the microdata format works"
-            },
+            jsonld: false,
             oembed_xml_photo: false,
             oembed_xml_link: false,
             oembed_xml_rich: false,
@@ -83,7 +77,7 @@ module.exports = [
         tests: {
             title: {
                 works: true,
-                note: "only in conjunction with a meta description"
+                note: "1"
             },
             metadescription: true,
             microdata: false,
@@ -94,19 +88,19 @@ module.exports = [
             oembed_xml_photo: false,
             oembed_json_rich: {
                 works: true,
-                note: "Does not show thumbnail."
+                note: "2"
             },
             oembed_json_photo: {
                 works: true,
-                note: "Does not show photo."
+                note: "2"
             },
             oembed_json_link: {
                 works: true,
-                note: "Does not show thumbnail."
+                note: "2"
             },
             oembed_json_video: {
                 works: true,
-                note: "Does not show video."
+                note: "2"
             },
             opengraph: true,
             opengraph_pointer: false,
@@ -181,7 +175,7 @@ module.exports = [
         tests: {
             title: {
                 works: true,
-                note: "in conjunction with a meta description"
+                note: "1"
             },
             metadescription: true,
             microdata: true,
@@ -238,7 +232,7 @@ module.exports = [
             twitter: false,
             opengraph: {
                 works: true,
-                note: "Only uses title"
+                note: "4"
             },
             opengraph_pointer: false
         }
@@ -295,7 +289,7 @@ module.exports = [
             jsonld: true,
             oembed_xml_photo: {
                 works: true,
-                note: "doesn't show photo"
+                note: "2"
             },
             oembed_xml_link: true,
             oembed_xml_rich: true,
@@ -303,13 +297,13 @@ module.exports = [
             oembed_json_link: true,
             oembed_json_photo: {
                 works: true,
-                note: "doesn't show photo"
+                note: "2"
             },
             oembed_json_rich: true,
             oembed_json_video: true,
             twitter: {
                 works: true,
-                note: "no thumbnail"
+                note: "2"
             },
             opengraph: true,
             opengraph_pointer: null

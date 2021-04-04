@@ -1,0 +1,12 @@
+.footer-nav {
+    @extend .page;
+    display:flex;
+    a {
+        padding:get-size('500');
+        flex:1;
+        text-align: center;
+        font-size:get-size('500');
+        background:var(--highlight);
+        color:var(--glare);
+    }
+}

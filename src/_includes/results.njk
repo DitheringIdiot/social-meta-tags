@@ -4,10 +4,9 @@
         <td colspan=5 class="empty"></td>
         <td colspan=4>oEmbed XML</td>
         <td colspan=4>oEmbed JSON</td>
-
     </tr>
 
-    <tr>
+    <tr class="fix-width">
         <td class="empty"></td>
         {% for tag in tagData.resultsTable %}
             <td>{{tag.title}}</td>
@@ -18,16 +17,17 @@
     {% for site in sites %}
 
         <tr>
-            <td>{{site.name}}</td>
+            <td class="site-name">{{site.name}}</td>
 
             {% for tag in tagData.resultsTable %}
-                <td class="{{"yes" if site.tests[tag.name]}}{{"no" if not site.tests[tag.name]}}{{" unknown" if site.tests[tag.name] === null}}{{" but" if site.tests[tag.name].note }}">
+                <td class="{{"yes" if site.tests[tag.name]}}{{"no" if not site.tests[tag.name]}}{{" unknown" if site.tests[tag.name] === null}}">
                     {% if site.tests[tag.name] %}
-                        yes
                         {% if site
                             .tests[tag.name]
                             .note %}
-                            <span>{{site.tests[tag.name].note}}</span>
+                            yes<sup>{{site.tests[tag.name].note}}</sup>
+                        {% else %}
+                        yes
                         {% endif %}
                     {% elseif site.tests[tag.name] === null %}
                         unknown
@@ -42,3 +42,14 @@
     {% endfor %}
 
 </table>
+
+<ol>
+
+    <li>Only in conjunction with a <code>meta description</code>
+    </li>
+    <li>Doesn't show thumbnail / photo / video.</li>
+    <li>Requires a non-spec <code>description</code> or <code>image</code> key.</li>
+    <li>Only uses <code>title</code>
+    </li>
+
+</ol>

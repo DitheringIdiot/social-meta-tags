@@ -1,0 +1,35 @@
+---
+layout: base.njk
+templateEngineOverride: njk
+permalink: "/link-preview-tester/"
+style: "social-preview-form"
+script: "public/scripts/link-preview-tester.js"
+---
+
+<header>
+    <h1>link-preview tester</h1>
+
+    <p>Use this form to test out different combinations of meta tags for enabling previews on social media sites and
+        instant messenger apps.</p>
+</header>
+<form action="/.netlify/functions/link-preview-test">
+
+    <p>Choose which meta tags you'd like to include. You can mix and match.</p>
+
+    {% for item in tagData %}
+    <label class="checkbox">
+        <input type="checkbox"
+               name="{{item.name}}"
+               id="{{item.name}}">
+        {{item.title}}
+        <b aria-hidden="true">✔</b>
+    </label>
+    {% endfor %}
+
+    <p>Use this url to test link previews:</p>
+    <div>
+        <code id="url">
+        </code>
+    </div>
+    <button class="block noscript-hide">Visit Link Preview Page</button>
+</form>
