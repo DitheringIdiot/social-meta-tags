@@ -26,6 +26,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPassthroughCopy("./src/test-opengraph-pointer.html")
     eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png")
     eleventyConfig.addPassthroughCopy("./src/robots.txt")
+    eleventyConfig.addPassthroughCopy("./src/_redirects")
     eleventyConfig.addWatchTarget("./src/css/")
 
     eleventyConfig.addPlugin(pluginRss)

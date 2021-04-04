@@ -89,8 +89,9 @@ const socialPreviewTestmarkupObj = (optionsArray, url, stylesheet) => {
         const stylesheetLink = `<link rel="stylesheet" href="${stylesheet}">`
 
         return `<head lang="en"${microdataHeadInfo}>
-                ${stylesheetLink}
+                <title>Link Preview Test | Title Tag</title>
                 ${content}
+                ${stylesheetLink}
                 </head>`
     }
 
