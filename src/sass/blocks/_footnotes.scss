@@ -1,0 +1,6 @@
+.footnotes {
+    @extend .wrapper;
+    background:var(--shadier);
+    padding: get-size('1000') 0;
+    margin-top:get-size('700');
+}

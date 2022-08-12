@@ -1,0 +1,33 @@
+:root {
+    --glare:#ffffff;
+    --base:#F7FAFC;
+    --shade:#edf2f5;
+    --shadier:#E2EEF3; 
+    --text:#171A21;
+
+    --code-bg:#264653;
+    --code-text:#fff;
+    --code-header:#444;
+    
+    --link:#81CADA;
+    --link-hover:#46B1C9;
+
+    --spark:#F9C846;
+
+    --highlight-shade:#5CFFAB;
+    --highlight:#99FFCA;
+    --highlight-glare:#D6FFE9;
+
+    @media (prefers-color-scheme: dark) {
+
+    --text:#e1e1e1;
+    --glare:#292929;
+    --base:#1d1d1d;
+    --shade:#121212;
+    
+    }
+}
+
+body {
+    background:var(--base);
+}

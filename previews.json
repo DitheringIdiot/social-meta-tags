@@ -1,2 +1,58 @@
 [
+  {
+      "title":"Meta Description",
+      "imgName":"metadescription"
+  },
+  {
+      "title":"Facebook Open Graph",
+      "imgName":"opengraph"
+  },
+  {
+      "title":"Open Graph Pointer",
+      "imgName":"opengraph_pointer"
+  },
+  {
+      "title":"Twitter Card",
+      "imgName":"twitter"
+  },
+  {
+      "title":"Schema.org Microdata",
+      "imgName":"microdata"
+  },
+  {
+      "title":"Schema.org JSON-ld",
+      "imgName":"jsonld"
+  },
+  {
+      "title":"oEmbed Rich XML Format",
+      "imgName":"oembed_xml_rich"
+  },
+  {
+      "title":"oEmbed Photo XML Format",
+      "imgName":"oembed_xml_photo"
+  },
+  {
+      "title":"oEmbed Video XML Format",
+      "imgName":"oembed_xml_video"
+  },
+  {
+      "title":"oEmbed Link XML Format",
+      "imgName":"oembed_xml_link"
+  },
+  {
+      "title":"oEmbed Rich JSON format",
+      "imgName":"oembed_json_rich"
+  },
+  {
+      "title":"oEmbed Photo JSON format",
+      "imgName":"oembed_json_photo"
+  },
+  {
+      "title":"oEmbed Video JSON format",
+      "imgName":"oembed_json_video"
+  },
+  {
+      "title":"oEmbed Link JSON format",
+      "imgName":"oembed_json_link"
+  }
 ]

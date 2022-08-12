@@ -1,0 +1,38 @@
+.step-number {
+
+
+        font-family: var(--mono);
+
+        border-radius:1rem;
+        width:1.33em;
+        height:1.33em;
+        font-size:.75em;
+    
+        
+        background:var(--glare);
+        border:solid 1px var(--text);
+        color:var(--text);
+
+        display:inline-flex;
+        justify-content:center;
+        align-items: center;
+        padding-bottom:.1em;
+    
+}
+
+.form-step {
+    background:var(--glare);
+    padding:get-size('200');
+    border-radius:get-size('200');
+
+
+    & > * + * {
+        margin-top:get-size('300');
+    } 
+}
+
+form {
+    figure + figure {
+        margin-top:get-size('500')
+    }
+}

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <style>
             {% if style %}
-                {% include "../../public/css/" + style + ".css" %}
+                {% include "css/" + style + ".css" %}
             {% else %}
-                {% include "../../public/css/critical.css" %}
+                {% include "css/critical.css" %}
             {% endif %}
         </style>
     </head>
@@ -17,38 +18,24 @@
 
         {{ content | safe }}
 
-        <svg class="hidden">
-            <filter id="x">
-                <feTurbulence baseFrequency="0.01 0.02" numOctaves="2" result="t0"></feTurbulence>
-                <feDisplacementMap in="SourceGraphic" in2="t0" scale="4" result="d0"></feDisplacementMap>
-                <feComposite in="SourceGraphic" in2="d0" operator="atop" result="0"></feComposite>
-                <feTurbulence baseFrequency="1" numOctaves="2" result="t1"></feTurbulence>
-                <feDisplacementMap in="0" in2="t1" scale="1" result="d1"></feDisplacementMap>
-                <feComposite in="0" in2="d1" operator="atop" result="1"></feComposite>
-                <feOffset in="1" dx="-3" dy="-3"/>
-            </filter>
-        </svg>
-
-        <svg class="hidden">
-            <filter id="xs">
-                <feTurbulence baseFrequency="0.01 0.02" numOctaves="2" result="t0"></feTurbulence>
-                <feDisplacementMap in="SourceGraphic" in2="t0" scale="4" result="d0"></feDisplacementMap>
-                <feComposite in="SourceGraphic" in2="d0" operator="atop" result="0"></feComposite>
-                <feTurbulence baseFrequency="1" numOctaves="2" result="t1"></feTurbulence>
-                <feDisplacementMap in="0" in2="t1" scale="1" result="d1"></feDisplacementMap>
-                <feComposite in="0" in2="d1" operator="atop" result="1"></feComposite>
-                <feOffset in="1" dx="-3" dy="-3"/>
-            </filter>
-        </svg>
 
         {% if script %}
             {% set js %}
             {% include script %}
             {% endset %}
-
-            <script>
-                {{ js | safe }}
-            </script>
         {% endif %}
+
+        {% set fontloading %}
+        {% include "public/scripts/font-loading.js" %}
+        {% endset %}
+
+        <script>
+
+            {{ fontloading | safe }}
+
+            {% if script %}
+                {{ js | safe }}
+            {% endif %}
+        </script>
     </body>
 </html>

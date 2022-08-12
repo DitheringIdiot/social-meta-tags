@@ -1,0 +1,740 @@
+@charset "UTF-8";
+/**
+ * BASE SIZE
+ * All calculations are based on this. It’s recommended that
+ * you keep it at 1rem because that is the root font size. You
+ * can set it to whatever you like and whatever unit you like.
+ */
+/**
+ * SIZE SCALE
+ * This is a Perfect Fourth scale that powers all the utilities that
+ * it is relevant for (font-size, margin, padding). All items are
+ * calcuated off the base size, so change that and cascade across
+ * your whole project.
+ */
+/**
+ * COLORS
+ * Colors are shared between backgrounds and text by default. 
+ * You can also use them to power borders, fills or shadows, for example.
+ */
+/**
+ * CORE CONFIG
+ * This powers everything from utility class generation to breakpoints
+ * to enabling/disabling pre-built components/utilities.
+ */
+.bg-text {
+  background: var(--text);
+}
+
+.bg-base {
+  background: var(--base);
+}
+
+.bg-shade {
+  background: var(--shade);
+}
+
+.bg-glare {
+  background: var(--glare);
+}
+
+.bg-highlight {
+  background: var(--highlight);
+}
+
+.color-text {
+  color: var(--text);
+}
+
+.color-base {
+  color: var(--base);
+}
+
+.color-shade {
+  color: var(--shade);
+}
+
+.color-glare {
+  color: var(--glare);
+}
+
+.color-highlight {
+  color: var(--highlight);
+}
+
+.set-text {
+  --set: var(--text);
+}
+
+.set-base {
+  --set: var(--base);
+}
+
+.set-shade {
+  --set: var(--shade);
+}
+
+.set-glare {
+  --set: var(--glare);
+}
+
+.set-highlight {
+  --set: var(--highlight);
+}
+
+.font-mono, p sup a, li sup a {
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
+.font-base {
+  font-family: Georgia, serif;
+}
+
+.leading-loose {
+  line-height: 1.7;
+}
+
+.leading-tight {
+  line-height: 1.3;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  text-decoration-skip-ink: auto;
+}
+
+div {
+  border-color: currentColor;
+}
+
+/* Remove default padding and list style from lists that have a class */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd,
+input,
+button {
+  margin: 0;
+}
+
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: 0;
+  -moz-appearance: none;
+  /* older firefox */
+  -webkit-appearance: none;
+  /* safari, chrome, edge and ie mobile */
+  appearance: none;
+  /* rest */
+}
+
+/* Remove Animation for people who don't want to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* COMPOSITION */
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1140;
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+      (var(--fluid-max-width) - var(--fluid-min-width))
+  );
+}
+
+@media screen and (min-width: 1140px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px);
+  }
+}
+:root {
+  --f-0-min: 16.00;
+  --f-0-max: 24.00;
+  font-size: calc( ((var(--f-0-min) / 16) * 1rem) + (var(--f-0-max) - var(--f-0-min)) * var(--fluid-bp) );
+}
+
+body, html {
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.wrapper, dl, header,
+footer,
+main,
+section,
+figure,
+form,
+footer > nav,
+.site-index {
+  display: grid;
+  grid-template-columns: [left-margin] minmax(1rem, 2fr) [aside] minmax(7rem, 12fr) 1rem [aside-gap] 2fr [left-gap] 1rem [main] minmax(auto, 32rem) [right-gap] minmax(1rem, 10fr) [right-margin] minmax(1rem, 2fr);
+  grid-auto-rows: auto;
+  grid-column: 1/10;
+  margin: 0;
+  align-items: start;
+}
+.wrapper > * + *, dl > * + *, header > * + *,
+footer > * + *,
+main > * + *,
+section > * + *,
+figure > * + *,
+form > * + *,
+footer > nav > * + *,
+.site-index > * + * {
+  margin-top: 0.75rem;
+}
+
+.heading {
+  display: grid;
+  grid-template-columns: [aside] minmax(10rem, 12fr) 1rem [aside-gap] 2fr [left-gap] 1rem [main] minmax(auto, 30rem);
+  grid-column: aside/right-gap;
+}
+
+.inline {
+  display: initial;
+  margin: initial;
+  width: auto;
+}
+
+section, main header {
+  padding: 2.36rem 0;
+}
+
+div, p, h1, h2, h3, h4, li, blockquote, label, ul, ol {
+  grid-column: main;
+}
+
+table {
+  grid-column: aside/-1;
+}
+
+aside {
+  grid-column: aside;
+}
+
+ul, ol {
+  padding: 0;
+}
+
+.inset {
+  max-width: none;
+}
+
+:root {
+  --glare:#ffffff;
+  --base:#F7FAFC;
+  --shade:#edf2f5;
+  --shadier:#E2EEF3;
+  --text:#171A21;
+  --code-bg:#264653;
+  --code-text:#fff;
+  --code-header:#444;
+  --link:#81CADA;
+  --link-hover:#46B1C9;
+  --spark:#F9C846;
+  --highlight-shade:#5CFFAB;
+  --highlight:#99FFCA;
+  --highlight-glare:#D6FFE9;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text:#e1e1e1;
+    --glare:#292929;
+    --base:#1d1d1d;
+    --shade:#121212;
+  }
+}
+
+body {
+  background: var(--base);
+}
+
+:root {
+  color: var(--text);
+  --body:"Space Grotesk", -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  --mono:"Space Mono", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  line-height: 1.7;
+  font-family: var(--body);
+}
+
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  font-size: 14px;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  margin: 0;
+}
+
+code {
+  border-radius: 4px;
+  background: var(--shade);
+  font-size: 0.8em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0.1em 0.2em;
+  font-family: var(--mono);
+}
+
+.loaded-fonts code {
+  font-size: 1em;
+}
+
+.loaded-fonts pre code {
+  font-size: 0.8em;
+}
+
+figure {
+  font-family: var(--mono);
+  grid-auto-flow: dense;
+}
+figure * {
+  grid-column: main;
+  margin-top: 0;
+}
+figure pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  border-radius: 4px;
+}
+
+figcaption {
+  grid-column: aside;
+  font-size: 0.75rem;
+  text-align: right;
+  font-weight: bold;
+}
+figcaption .bytes {
+  font-weight: normal;
+}
+
+figure:before {
+  content: "";
+}
+
+pre {
+  padding: 1rem;
+  font-size: 1rem;
+  white-space: pre;
+  overflow-x: scroll;
+}
+pre code {
+  background: transparent;
+  color: var(--code-text);
+}
+
+figure.small pre {
+  font-size: 0.56rem;
+}
+
+.token {
+  color: #fff;
+}
+.token.tag, .token.attr-name {
+  color: #EE6352;
+}
+.token.attr-value {
+  color: #6affb2;
+}
+.token.punctuation {
+  color: #fff;
+}
+.token.selector, .token.rule {
+  color: #cc99cd;
+}
+.token.function {
+  color: #f08d49;
+}
+.token.url {
+  color: #67cdcc;
+}
+.token.property {
+  color: #f8c555;
+}
+.token.string {
+  color: #7ec699;
+}
+
+.margin-decoration, figure:before {
+  grid-column: aside-gap;
+  height: 1px;
+  background: var(--text);
+  margin-top: 0.75rem;
+}
+
+/* LISTS */
+ol, ul {
+  list-style: none;
+  padding-left: 0;
+}
+ol li, ul li {
+  position: relative;
+  margin-top: var(--l);
+}
+ol li:before, ul li:before {
+  position: relative;
+  float: left;
+  margin-left: calc(3em * -1);
+}
+ol li + li, ul li + li {
+  margin-top: 1.33rem;
+}
+
+ul li:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid var(--highlight);
+  margin-top: 0.5em;
+}
+
+ol {
+  counter-reset: x;
+}
+ol li:before {
+  font-family: var(--mono);
+  counter-increment: x;
+  content: counter(x);
+  border-radius: 1rem;
+  width: 1.33em;
+  height: 1.33em;
+  font-size: 0.75em;
+  margin-top: 0.7em;
+  background: var(--glare);
+  border: solid 1px var(--text);
+  color: var(--text);
+  top: -0.23em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loaded-fonts ol li:before {
+  padding-bottom: 0.05em;
+}
+
+dl {
+  font-size: 1rem;
+  align-items: center;
+}
+dl dt {
+  font-style: italic;
+  margin-top: 1rem;
+  grid-column: aside;
+  text-align: right;
+}
+dl dd {
+  display: grid;
+  margin-top: 1rem;
+  grid-column: aside-gap/right-gap;
+  grid-template-columns: [aside-gap] 4fr [left-gap] 1rem [main] minmax(auto, 30rem);
+}
+dl dd > * {
+  grid-column: main;
+}
+dl dd:before {
+  content: "";
+  height: 1px;
+  margin-top: 0.8em;
+  background: var(--text);
+  grid-column: aside-gap;
+}
+
+.footnotes {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+}
+
+:target:before {
+  background-color: var(--highlight);
+}
+
+sup > a:target {
+  background-color: var(--highlight);
+}
+
+:focus, .focus, .scroll-table:focus-within, h2:focus a, h3:focus a {
+  outline: dashed 4px var(--spark);
+  outline-offset: 2px;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  font-family: var(--sans);
+}
+
+main > * + * {
+  margin-top: 1.33rem;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 3.15rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.36rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: var(--mono);
+  color: #000;
+  font-weight: bold;
+  grid-column: main/-3;
+  line-height: 1.7;
+}
+
+h2 {
+  font-size: 1.77rem;
+}
+
+h3 {
+  font-size: 1.33rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+/* QUOTES */
+blockquote {
+  font-style: italic;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--highlight);
+}
+blockquote:before, blockquote:after {
+  content: "";
+}
+
+/* SUPERSCRIPT */
+p sup a, li sup a {
+  background: var(--link);
+  color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.56rem;
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 1rem;
+  padding-top: 0.05em;
+  font-style: normal;
+  box-shadow: none;
+  text-decoration: none;
+}
+p sup a:hover, li sup a:hover {
+  box-shadow: none;
+  background: var(--highlight);
+}
+
+/* LINKS and ANCHORS */
+p a, figcaption a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background: var(--base);
+  border: dashed 2px var(--link);
+  padding: 0.2em 0.4em;
+}
+p a:hover, figcaption a:hover {
+  background: var(--link);
+}
+
+h2, h3 {
+  line-height: 1.55;
+}
+h2 a, h3 a {
+  color: inherit;
+  text-decoration: none;
+  background: var(--highlight);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0.1em 0.2em;
+}
+h2 a:hover, h3 a:hover {
+  background: var(--link);
+}
+h2 a code, h3 a code {
+  background: transparent;
+  padding: 0;
+}
+h2:focus, h3:focus {
+  outline: none;
+}
+.lead {
+  line-height: 1.8;
+  font-size: 1.33rem;
+  margin-top: 0;
+  margin-bottom: 1.77rem;
+}
+.lead span {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0.2em 0.3em;
+  background: var(--base);
+  filter: url("#xs");
+}
+
+aside {
+  display: grid;
+  grid-template-columns: [aside-gap] 2fr [left-gap] 1rem [main] minmax(auto, 30rem);
+  grid-column: aside-gap/-2;
+  padding: 1rem 0;
+  background: var(--shade);
+}
+aside > * + * {
+  margin-top: 1.33rem;
+}
+aside > * {
+  grid-column: main;
+}
+aside ol li:before {
+  border-radius: 0;
+  border: 0;
+  background: var(--glare);
+  top: 0;
+}
+aside *:first-child {
+  margin-top: 0;
+}
+aside code {
+  background: var(--base);
+}
+
+main header {
+  background: var(--highlight);
+  --shade:var(--highlight-glare);
+}
+
+.scroll-table {
+  grid-column: aside/-2;
+  background: var(--base);
+  position: relative;
+  overflow: hidden;
+  padding: 0.56rem;
+}
+.scroll-table .site-name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  width: 4.2rem;
+  left: 0.56rem;
+  border-width: 1px;
+  box-shadow: 2px 0 rgba(0, 0, 0, 0.1);
+  background: var(--shade);
+}
+.scroll-table table {
+  padding: 0.56rem 0;
+  overflow-x: scroll;
+  margin-left: 4.2rem;
+  border-right: 2px dashed var(--shadier);
+}
+.scroll-table table:focus {
+  outline: none;
+}
+.scroll-table ol {
+  padding: 1rem 0 1rem 3rem;
+  font-size: 0.75rem;
+}
+
+table {
+  justify-self: end;
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  font-size: 0.56rem;
+  font-family: var(--mono);
+  border-collapse: collapse;
+  text-align: center;
+}
+table td {
+  padding: 0 0.56rem;
+  min-width: 3.15rem;
+  height: 1.33rem;
+  width: 3.15rem;
+  border: 1px solid var(--base);
+  border-top: 0;
+  background: var(--shade);
+  display: table-cell;
+}
+table td.yes {
+  background: var(--highlight);
+}
+table td.no {
+  background: var(--base);
+}
+table td.unknown {
+  background: var(--base);
+}
+table td.empty {
+  background: var(--shade);
+}
+table td:hover span {
+  opacity: 1;
+}
+table tr:last-child td {
+  border-bottom: 0;
+}

@@ -1,0 +1,117 @@
+pre {
+    background:var(--code-bg);
+    color:var(--code-text);
+    font-size:14px;
+    padding:1rem;
+    border-radius:4px;
+    overflow-y:hidden;
+    overflow-x:scroll;
+    margin:0;
+}
+
+code {
+        border-radius:4px;
+        background:var(--shade);
+        font-size:0.8em;
+        -webkit-box-decoration-break:clone;
+        box-decoration-break:clone;
+        padding:.1em .2em;
+        font-family:var(--mono);
+}
+
+.loaded-fonts code {
+    font-size:1em;
+}
+
+.loaded-fonts pre code {
+        font-size:.8em;
+}
+
+
+figure {
+
+    font-family:var(--mono);
+    grid-auto-flow: dense;
+
+    * {
+        grid-column:main;
+        margin-top:0;
+    }
+
+    pre {
+            background:var(--code-bg);
+            color:var(--code-text);
+            border-radius:4px;
+    }
+}
+
+figcaption {
+
+    grid-column:aside;
+    font-size:get-size('300');
+    text-align: right;
+    font-weight:bold;
+
+    .bytes {
+        font-weight:normal;
+    }
+}
+
+figure:before {
+    content:"";
+    @extend .margin-decoration;    
+}
+
+pre {
+    padding:get-size('400');
+    font-size:get-size('400');
+    white-space:pre;
+    overflow-x:scroll;
+
+    code {
+        background:transparent;
+        color:var(--code-text);
+    }
+}
+
+figure.small pre {
+        font-size:get-size('200');
+}
+
+
+.token {
+
+    color:#fff;
+
+    &.tag, &.attr-name {
+    color:#EE6352;
+    }
+
+    &.attr-value {
+        color:#6affb2;
+    }
+
+    &.punctuation {
+    color:#fff;
+    }
+
+    &.selector, &.rule {
+        color:#cc99cd;
+    }
+
+    &.function {
+        color:#f08d49;
+    }
+
+    &.url {
+        color:#67cdcc;
+    }
+
+    &.property {
+        color:#f8c555;
+    }
+
+    &.string {
+        color:#7ec699;
+    }
+}

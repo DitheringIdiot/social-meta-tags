@@ -1,15 +1,18 @@
+
+<div class="scroll-table">
 <table>
 
     <tr>
         <td colspan=5 class="empty"></td>
+        <td colspan=2>Schema.org</td>
         <td colspan=4>oEmbed XML</td>
         <td colspan=4>oEmbed JSON</td>
     </tr>
 
     <tr class="fix-width">
-        <td class="empty"></td>
-        {% for tag in tagData.resultsTable %}
-            <td>{{tag.title}}</td>
+        <td class="empty site-name"></td>
+        {% for tag in tagData %}
+            <td>{{tag.shortName}}</td>
         {% endfor %}
 
     </tr>
@@ -18,8 +21,7 @@
 
         <tr>
             <td class="site-name">{{site.name}}</td>
-
-            {% for tag in tagData.resultsTable %}
+            {% for tag in tagData %}
                 <td class="{{"yes" if site.tests[tag.name]}}{{"no" if not site.tests[tag.name]}}{{" unknown" if site.tests[tag.name] === null}}">
                     {% if site.tests[tag.name] %}
                         {% if site
@@ -43,13 +45,10 @@
 
 </table>
 
-<ol>
-
-    <li>Only in conjunction with a <code>meta description</code>
-    </li>
-    <li>Doesn't show thumbnail / photo / video.</li>
-    <li>Requires a non-spec <code>description</code> or <code>image</code> key.</li>
-    <li>Only uses <code>title</code>
-    </li>
-
-</ol>
+    <ol>
+        <li>Only works with a <code>meta description</code> tag</li>
+        <li>Doesn't show thumbnail, photo, or video</li>
+        <li>Requires a non-spec <code>description</code> or <code>image</code> key</li>
+        <li>Only uses the <code>&lt;title&gt;</code> tag</li>
+    </ol>
+</div>

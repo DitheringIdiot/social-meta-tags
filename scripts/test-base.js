@@ -7,4 +7,4 @@ const testBase = (headContent, bodyContent) => {
 
 }
 
-module.exports = testBase
+export default testBase

@@ -1,0 +1,8 @@
+<svg height="100%" width="100%">
+    <defs>
+        <pattern id="s" width="4" height="4" viewBox="0 0 4 4" patternUnits="userSpaceOnUse">
+            <path d="m -1 1 a 1 1 0 0 1 1 1 a 1 1 0 0 0 1 1 a 1 1 0 0 0 1 -1 a 1 1 0 0 1 1 -1 a 1 1 0 0 1 1 1 a 1 1 0 0 0 1 1" stroke="#000" fill="transparent" />
+        </pattern>
+    </defs>
+    <rect fill="url(#s)" height="100%" width="100%"/>
+</svg>

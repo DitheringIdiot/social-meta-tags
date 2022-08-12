@@ -1,0 +1,47 @@
+input[type="checkbox"] {
+    position: absolute;
+    right:1rem;
+    opacity:0.001;
+    pointer-events: none;
+}
+
+.checkbox {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border:solid 2px var(--shade);
+    border-radius:4px;
+    padding:get-size('300');
+    cursor: pointer;
+    font-family:var(--mono);
+
+    b {
+        height:24px;
+        width:24px;
+        border:solid 2px var(--text);
+        border-radius:4px;
+        box-shadow:0 2px var(--shadier), inset 0 2px var(--shadier);
+        color:transparent;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom:3px;
+    }
+
+    &:hover {
+        background:var(--shade);
+    }
+
+}
+
+.checkbox:focus-within {
+    @extend .focus;
+}
+
+
+input[type="checkbox"]:checked ~ b, input[type=radio]:checked ~ b {
+
+    color:var(--text);
+
+}

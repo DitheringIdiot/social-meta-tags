@@ -1,0 +1,19 @@
+button {
+    background:var(--highlight);
+    border:solid 2px transparent;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding:get-size('300');
+    font-family:var(--mono);
+    border-radius:4px;
+    box-shadow:0 2px var(--shade);
+    color:var(--text);
+
+    grid-column: main;
+}
+
+button:hover {
+    background:var(--highlight-shade);
+
+}

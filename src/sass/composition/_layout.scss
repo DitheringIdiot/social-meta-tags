@@ -1,0 +1,90 @@
+body, html {
+    width:100vw;
+    max-width:100vw;
+    min-height:100vh;
+    padding:0;
+    margin:0;
+    position: relative;
+    overflow-x:hidden;
+}
+
+.wrapper {
+    
+    display:grid;
+    grid-template-columns:
+        [left-margin] minmax(1rem, 2fr) 
+        [aside] minmax(7rem, 12fr)
+        1rem
+        [aside-gap] 2fr 
+        [left-gap] 1rem
+        [main] minmax(auto, 32rem) 
+        [right-gap] minmax(1rem, 10fr)
+        [right-margin] minmax(1rem, 2fr);
+    grid-auto-rows: auto;
+    grid-column:1/10;
+    margin:0;
+    align-items: start;
+
+    & > * + * {
+        margin-top:get-size('300');
+    }
+}
+
+
+.heading {
+    display:grid;
+    grid-template-columns:         
+        [aside] minmax(10rem, 12fr)
+        1rem
+        [aside-gap] 2fr 
+        [left-gap] 1rem
+        [main] minmax(auto, 30rem);
+    grid-column:aside/right-gap;
+}
+
+
+.inline {
+    display:initial;
+    margin:initial;
+    width:auto;
+}
+
+
+header, 
+footer, 
+main, 
+section, 
+figure,
+form,
+footer > nav, 
+.site-index {
+    @extend .wrapper;
+}
+
+
+section, main header {
+    padding:get-size('700') 0;
+}
+
+
+
+div, p, h1, h2, h3, h4, li, blockquote, label, ul, ol /* then overide table with display:table */ {
+    grid-column: main;
+}
+
+table {
+    grid-column: aside / -1;
+}
+
+aside {
+    grid-column: aside;
+}
+
+ul,ol {
+    padding:0;
+}
+
+
+.inset {
+    max-width:none;
+}

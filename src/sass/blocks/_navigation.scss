@@ -1,0 +1,27 @@
+footer {
+  
+    
+    nav {
+
+        display:grid;
+        
+
+        a {
+            padding:get-size('500');
+            text-align: center;
+            font-size:get-size('500');
+            background:var(--shade);
+            margin:0;
+        }
+
+        .next {
+            grid-column: main / 10;
+            text-align: right;
+        }
+
+        .previous {
+            grid-column: 1 / main;
+            text-align: left;
+        }
+    }
+}

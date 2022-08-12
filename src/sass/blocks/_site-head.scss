@@ -1,0 +1,27 @@
+.site-head {
+    padding:0;
+    align-items: center;
+
+    a {
+
+        @extend .wrapper;        
+        grid-column:1 / -1;
+        padding:get-size('300') 1rem;
+        text-decoration:none;
+        background:var(--shade);
+        font-family: var(--mono);
+        
+        span {
+            grid-column: 1 / aside-gap;
+            text-align:right;
+        }
+
+    }
+
+
+
+    code {
+        color:var(--text);
+        background:var(--highlight);
+    }
+}

@@ -1,18 +1,18 @@
 const tags = [
-    { name: "metadescription", title: "Meta Description" },
-    { name: "microdata", title: "Schema.org Microdata" },
-    { name: "jsonld", title: "Schema.org JSON-ld" },
-    { name: "opengraph", title: "Facebook Open Graph" },
-    { name: "opengraph_pointer", title: "Open Graph Pointer" },
-    { name: "twitter", title: "Twitter Card" },
-    { name: "oembed_rich_xml", title: "oEmbed Rich XML Format" },
-    { name: "oembed_photo_xml", title: "oEmbed Photo XML Format" },
-    { name: "oembed_video_xml", title: "oEmbed Video XML Format" },
-    { name: "oembed_link_xml", title: "oEmbed Link XML Format" },
-    { name: "oembed_rich_json", title: "oEmbed Rich JSON format" },
-    { name: "oembed_photo_json", title: "oEmbed Photo JSON format" },
-    { name: "oembed_video_json", title: "oEmbed Video JSON format" },
-    { name: "oembed_link_json", title: "oEmbed Link JSON format" }
+    { name: "metadescription", title: "Meta Description", shortName: "meta description" },
+    { name: "opengraph", title: "Facebook Open Graph", shortName: "Open Graph" },
+    { name: "opengraph_pointer", title: "Open Graph Pointer", shortName: "Open Graph Pointer" },
+    { name: "twitter", title: "Twitter Card", shortName: "Twitter Card" },
+    { name: "microdata", title: "Schema.org Microdata", shortName: "microdata" },
+    { name: "jsonld", title: "Schema.org JSON-ld", shortName: "JSON-ld" },
+    { name: "oembed_xml_rich", title: "oEmbed Rich XML Format", shortName: "Rich" },
+    { name: "oembed_xml_photo", title: "oEmbed Photo XML Format", shortName: "Photo" },
+    { name: "oembed_xml_video", title: "oEmbed Video XML Format", shortName: "Video" },
+    { name: "oembed_xml_link", title: "oEmbed Link XML Format", shortName: "Link" },
+    { name: "oembed_json_rich", title: "oEmbed Rich JSON format", shortName: "Rich" },
+    { name: "oembed_json_photo", title: "oEmbed Photo JSON format", shortName: "Photo" },
+    { name: "oembed_json_video", title: "oEmbed Video JSON format", shortName: "Video" },
+    { name: "oembed_json_link", title: "oEmbed Link JSON format", shortName: "Link" }
 ]
 
 // findCombinations() Code Taken from here:

@@ -1,0 +1,52 @@
+.site-index {
+
+    h2 {
+        margin-top:2rem;
+        margin-bottom: 0;
+        font-weight:900;
+    }
+
+    ul {
+        margin:0;
+        padding:0;
+    }
+
+    a {
+        color:inherit;
+        text-decoration: none;
+        box-shadow: none;
+        font-family:var(--mono);
+        background:var(--shade);
+        display:block;
+        padding:get-size('300');;
+
+
+        &:hover {
+            background:var(--link-hover);
+            box-shadow: none;
+        }
+
+    }
+
+    li {
+        align-items: center;
+        font-size:get-size('500');
+        padding:0;
+
+        &:before { 
+            display:none;
+        }
+
+    }
+
+    li li {
+        margin-top:0;
+        font-size:get-size('400');
+
+        a {
+            margin-left:get-size('400');
+        }
+
+    }
+
+}

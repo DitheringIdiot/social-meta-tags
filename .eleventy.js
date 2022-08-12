@@ -4,8 +4,9 @@ const socialImages = require("@11tyrocks/eleventy-plugin-social-images")
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 let markdownIt = require("markdown-it")
 // const Normalizer = require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace')
-const mia = require('markdown-it-attrs')
-const mid = require('markdown-it-div')
+const markdownItAttr = require('markdown-it-attrs')
+const markdownItDiv = require('markdown-it-div')
+const markdownItFootnote = require('markdown-it-footnote')
 const markdownItAnchor = require("markdown-it-anchor")
 
 const jsdom = require("jsdom")
@@ -13,21 +14,19 @@ const { JSDOM } = jsdom
 
 module.exports = (eleventyConfig) => {
 
-    eleventyConfig.addPassthroughCopy("./src/css")
+    eleventyConfig.addWatchTarget("./src/sass/")
+
+    eleventyConfig.addPassthroughCopy({ "./src/_includes/css/*": "/css/" })
+
     eleventyConfig.addPassthroughCopy("./src/favicon.ico")
-    eleventyConfig.addPassthroughCopy("./src/oembed_rich.xml")
-    eleventyConfig.addPassthroughCopy("./src/oembed_link.xml")
-    eleventyConfig.addPassthroughCopy("./src/oembed_photo.xml")
-    eleventyConfig.addPassthroughCopy("./src/oembed_video.xml")
-    eleventyConfig.addPassthroughCopy("./src/oembed_rich.json")
-    eleventyConfig.addPassthroughCopy("./src/oembed_link.json")
-    eleventyConfig.addPassthroughCopy("./src/oembed_photo.json")
-    eleventyConfig.addPassthroughCopy("./src/oembed_video.json")
-    eleventyConfig.addPassthroughCopy("./src/test-opengraph-pointer.html")
+    eleventyConfig.addPassthroughCopy({ "./src/fonts/*": "/" })
+
+    eleventyConfig.addPassthroughCopy({ "./src/social-testing-files/*": "/" })
+
+
     eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png")
     eleventyConfig.addPassthroughCopy("./src/robots.txt")
     eleventyConfig.addPassthroughCopy("./src/_redirects")
-    eleventyConfig.addWatchTarget("./src/css/")
 
     eleventyConfig.addPlugin(pluginRss)
     eleventyConfig.addPlugin(socialImages)
@@ -75,26 +74,35 @@ module.exports = (eleventyConfig) => {
 
 
 
-    let tag = '' // Important part of the markdown tag bits
 
-
-    let markdownLibrary = markdownIt({
+    const markdownItConfig = {
         html: true,
         breaks: false
-    }).disable('code').use(mia).use(markdownItAnchor, {
-        permalink: true,
-        permalinkClass: "anchor",
-        permalinkSymbol: "&nbsp;#",
-        permalinkSpace: false,
-        permalinkBefore: false,
+    }
+
+
+
+    const markdownEngine = markdownIt(markdownItConfig).disable('code')
+
+    markdownEngine.use(markdownItAttr)
+
+
+    markdownEngine.use(markdownItAnchor, {
         level: [2, 3],
+        permalink: markdownItAnchor.permalink.headerLink(),
         slugify: (s) =>
             s
                 .trim()
                 .toLowerCase()
                 .replace(/[\s+~\/]/g, "-")
                 .replace(/[().`,%·'"!?¿:@*]/g, ""),
-    }).use(mid, {
+    })
+
+
+
+    let tag = '' // Important part of the markdown tag bits
+
+    markdownEngine.use(markdownItDiv, {
 
         render: function (tokens, idx) {
             var m = tokens[idx].info.trim()
@@ -125,7 +133,20 @@ module.exports = (eleventyConfig) => {
     })
 
 
-    eleventyConfig.setLibrary("md", markdownLibrary)
+    markdownEngine.use(markdownItFootnote)
+
+    markdownEngine.renderer.rules.footnote_caption = (tokens, idx) => {
+        const n = Number(tokens[idx].meta.id + 1).toString()
+
+        if (tokens[idx].meta.subId > 0) {
+            n += ':' + tokens[idx].meta.subId
+        }
+
+        return n
+    }
+
+
+    eleventyConfig.setLibrary("md", markdownEngine)
 
 
     eleventyConfig.addTransform("bytes", (content, outputPath) => {
@@ -150,7 +171,8 @@ module.exports = (eleventyConfig) => {
                 const text = block.textContent
                 const textEncoder = new TextEncoder()
                 const bytes = textEncoder.encode(text).length
-                const el = document.createElement('span')
+                const el = document.createElement('p')
+                el.classList.add("bytes")
                 el.innerHTML = formatBytes(bytes)
                 insertAfter(block, el)
             })

@@ -1,0 +1,128 @@
+/* LISTS */
+
+ol, ul {
+    list-style:none;
+    padding-left:0;
+
+    li {
+        position:relative;
+        margin-top:var(--l);
+
+        &:before {
+            position: relative;
+            float:left;
+            margin-left:calc(3em * -1);
+        }
+        
+    }
+
+    li + li {
+        margin-top:get-size('500');
+    }
+}
+
+ul {
+    li {
+        &:before {
+            content:"";
+            width:0;
+            height:0;
+            border-top: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid var(--highlight);
+            margin-top:.5em;
+        }
+    }
+}
+
+
+
+    ol {
+
+        counter-reset: x;
+        
+        li {            
+            &:before {
+                font-family: var(--mono);
+                counter-increment: x;  
+                content: counter(x);
+                border-radius:1rem;
+                width:1.33em;
+                height:1.33em;
+                font-size:.75em;
+                margin-top:.7em;
+
+                
+                background:var(--glare);
+                border:solid 1px var(--text);
+                color:var(--text);
+                top:-.23em;
+
+                display:flex;
+                justify-content:center;
+                align-items: center;
+            }
+        }
+    }
+
+
+    .loaded-fonts {
+        ol li:before {
+            padding-bottom:0.05em;
+        }
+    }
+
+
+
+
+dl {
+    
+    @extend .wrapper;
+    font-size:get-size('400');
+    align-items: center;
+
+    dt {
+        font-style: italic;
+        margin-top:1rem;
+        grid-column:aside;
+        text-align: right;
+    }
+
+    dd {
+        display:grid;
+        margin-top:1rem;
+        grid-column:aside-gap / right-gap;
+        grid-template-columns:         
+        [aside-gap] 4fr 
+        [left-gap] 1rem
+        [main] minmax(auto, 30rem);
+
+        > * {
+            grid-column: main;
+        }
+
+        &:before {
+            content:"";
+            height:1px;
+            margin-top:.8em;
+            background:var(--text);
+            grid-column:aside-gap;
+        }
+    }
+}
+
+
+.footnotes {
+    font-family:var(--sans);
+    font-size:get-size('300');
+}
+
+
+:target:before {
+    background-color:var(--highlight);
+}
+
+sup > a:target {
+        background-color:var(--highlight);
+}

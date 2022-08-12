@@ -1,0 +1,10 @@
+:root {
+    color:var(--text);
+    // --mono: "IBM Plex Mono", "Menlo", "Consolas", "Monaco", "Liberation Mono", "Lucida Console", monospace;
+    // --body: "IBM Plex";
+    --body:"Space Grotesk", -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;;
+    --mono:"Space Mono", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;;
+    line-height: 1.7;
+    font-family:var(--body);
+}
+

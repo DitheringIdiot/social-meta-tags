@@ -4,8 +4,10 @@ style: "home"
 ---
 
 <header class="site-head">
-    <a href="/">Get out of my <code>
+    <a href="/" class="nav-link">
+            <span>get out of my <code>
             <span>&lt;head&gt;</span></code>
+            </span>
     </a>
 </header>
 
@@ -13,7 +15,21 @@ style: "home"
     {{ content | safe }}
 </main>
 
-<nav class="footer-nav">
-    <a class="previous" href="{{previousLink}}">☚ {{previousText}}</a>
-    <a class="next" href="{{nextLink}}">{{nextText}} ☛</a>
-</nav>
+<footer>
+
+    {% if previousLink or nextLink %}
+    <nav>
+        {% if previousLink %}
+        <a class="previous nav-link" href="{{previousLink}}">
+            <span class="icon"></span>
+            {{previousText}}</a>
+        {% endif %}
+
+        {% if nextLink %}
+        <a class="next nav-link" href="{{nextLink}}">{{nextText}}
+            <span class="icon"></span></a>
+        {% endif %}
+    </nav>
+    {% endif %}
+
+</footer>

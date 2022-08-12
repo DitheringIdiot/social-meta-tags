@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: page.njk
 templateEngineOverride: njk
 permalink: "/link-preview-tester/"
 style: "social-preview-form"
@@ -7,15 +7,23 @@ script: "public/scripts/link-preview-tester.js"
 ---
 
 <header>
-    <h1>link-preview tester</h1>
-
-    <p>Use this form to test out different combinations of meta tags for enabling previews on social media sites and
-        instant messenger apps.</p>
+    <h1><span class="highlight">Link preview meta&nbsp;tag tester</span></h1>
+    <p><span class="highlight">Use this tool to test out different combinations of meta tags for enabling <strong>link previews</strong> on social media sites and
+        instant messenger apps.</span></p>
+    <p><a class="highlight-link" href="/link-preview-meta-tags">Learn more about link preview meta tags</a></p>
+    <p><a class="highlight-link" href="/link-preview-meta-tags/#which-meta-tags-work-on-which-apps">See which meta tags work for which apps</a></p>
 </header>
-<form action="/.netlify/functions/link-preview-test">
+<main>
+<section>
+<form>
 
-    <p>Choose which meta tags you'd like to include. You can mix and match.</p>
+    <figure>
+        <figcaption>
+            <p><span class="step-number">1</span></p>
+            <p>Select which meta tags you'd like to test. You can mix and match any combination.</p>
+        </figcaption>
 
+        <div class="form-step">
     {% for item in tagData %}
     <label class="checkbox">
         <input type="checkbox"
@@ -25,11 +33,33 @@ script: "public/scripts/link-preview-tester.js"
         <b aria-hidden="true">✔</b>
     </label>
     {% endfor %}
-
-    <p>Use this url to test link previews:</p>
-    <div>
-        <code id="url">
-        </code>
     </div>
-    <button class="block noscript-hide">Visit Link Preview Page</button>
+
+    </figure>
+
+    <figure>
+
+        <figcaption>
+        <p><span class="step-number">2</span></p>
+        <p>Copy this url</p>
+        </figcaption>
+
+        <div><textarea onclick="this.select()" id="url" rows="5" readonly></textarea></div>
+
+    </figure>
+
+    <figure>
+        <figcaption>
+            <p><span class="step-number">3</span></p>
+            <p>Paste the url into the app or website you'd like to test</p>
+        </figcaption>
+
+        <div class="form-step">
+            Visually check what information the link preview is displaying. It should look something like this:
+        </div>
+
+    </figure>
+
 </form>
+</section>
+</main>

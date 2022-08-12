@@ -1,0 +1,9 @@
+textarea {
+    border:solid 2px var(--text);
+    border-radius:4px;
+    resize: vertical;
+    width:100%;
+    display:block;
+    box-shadow: 0 2px var(--shade), inset 0 2px var(--shade);
+    padding:get-size('300');
+}
