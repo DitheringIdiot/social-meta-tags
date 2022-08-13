@@ -30,6 +30,9 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addPlugin(pluginRss)
     eleventyConfig.addPlugin(socialImages)
+
+
+    
     eleventyConfig.addPlugin(syntaxHighlight, {
         trim: true
     })
