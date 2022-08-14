@@ -1,11 +1,11 @@
 if ("fonts" in document) {
     if (!navigator.connection || (navigator.connection.effectiveType !== "slow-2g" && navigator.connection.effectiveType !== "2g" && navigator.connection.saveData)) {
-        const regular = new FontFace("IBM Plex", "url(/IBMPlexSans-Regular.woff2) format('woff2'), url(/IBMPlexSans-Regular.woff) format('woff')")
-        const italic = new FontFace("IBM Plex", "url(/IBMPlexSerif-Italic-Latin1.woff2) format('woff2'), url(/IBMPlexSerif-Italic-Latin1.woff) format('woff')", { style: "italic" })
-        const mono = new FontFace("IBM Plex Mono", "url(/IBMPlexMono-Regular-Latin1.woff2) format('woff2'), url(/IBMPlexMono-Regular-Latin1.woff) format('woff')")
-        const space = new FontFace("Space Grotesk", "url(/SpaceGrotesk.woff2) format('woff2'), url(/SpaceGrotesk.woff) format('woff')")
+        const regular = new FontFace("space grotesk", "url(/spacegrotesk-regular.woff2) format('woff2'), url(/spacegrotesk-regular.woff) format('woff')")
+        const bold = new FontFace("space grotesk", "url(/spacegrotesk-bold.woff2) format('woff2'), url(/spacegrotesk-bold.woff) format('woff')", { weight: 'bold'})
+        const mono = new FontFace("space mono", "url(/spacemono-regular.woff2) format('woff2'), url(/spacemono-regular.woff) format('woff')")
 
-        Promise.all([italic.load(), regular.load(), mono.load(), space.load()]).then((fonts) => {
+        Promise.all([regular.load(), mono.load(), bold.load()]).then((fonts) => {
+            
             fonts.forEach(function (font) {
                 document.fonts.add(font)
             })
