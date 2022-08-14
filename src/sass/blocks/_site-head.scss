@@ -1,20 +1,30 @@
 .site-head {
     padding:0;
-    align-items: center;
+    font-size: get-size('300');
+
+    text-align:left;
+
+    @include media-query('md') {
+        text-align:right;
+    }
 
     a {
 
         @extend .wrapper;        
         grid-column:1 / -1;
-        padding:get-size('300') 1rem;
         text-decoration:none;
         background:var(--shade);
         font-family: var(--mono);
+        padding:get-size('300') 0;
+        width:100%;
+
+
         
-        span {
-            grid-column: 1 / aside-gap;
-            text-align:right;
+        & > span {
+            grid-column: left-margin / aside-gap;
+            padding-left:get-size('200');
         }
+
 
     }
 

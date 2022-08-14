@@ -223,12 +223,28 @@ figure,
 form,
 footer > nav,
 .site-index {
-  display: grid;
-  grid-template-columns: [left-margin] minmax(1rem, 2fr) [aside] minmax(7rem, 12fr) 1rem [aside-gap] 2fr [left-gap] 1rem [main] minmax(auto, 32rem) [right-gap] minmax(1rem, 10fr) [right-margin] minmax(1rem, 2fr);
-  grid-auto-rows: auto;
-  grid-column: 1/10;
-  margin: 0;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.56rem;
+}
+@media (min-width: 37em) {
+  .wrapper, dl, header,
+footer,
+main,
+section,
+figure,
+form,
+footer > nav,
+.site-index {
+    display: grid;
+    grid-template-columns: [left-margin] minmax(1rem, 2fr) [aside] minmax(7rem, 12fr) 1rem [aside-gap] 2fr [left-gap] 1rem [main] minmax(auto, 32rem) [right-gap] minmax(1rem, 10fr) [right-margin] minmax(1rem, 2fr);
+    grid-auto-rows: auto;
+    grid-column: 1/10;
+    margin: 0;
+    align-items: start;
+    padding: 0;
+  }
 }
 .wrapper > * + *, dl > * + *, header > * + *,
 footer > * + *,
@@ -241,20 +257,46 @@ footer > nav > * + *,
   margin-top: 0.75rem;
 }
 
-.heading {
-  display: grid;
-  grid-template-columns: [aside] minmax(10rem, 12fr) 1rem [aside-gap] 2fr [left-gap] 1rem [main] minmax(auto, 30rem);
-  grid-column: aside/right-gap;
+main {
+  padding: 0 0.56rem;
+}
+@media (min-width: 37em) {
+  main {
+    padding: 0;
+  }
+}
+
+main > .wrapper, main > dl, main > header,
+main > footer,
+main > main,
+main > section,
+main > figure,
+main > form,
+main > .site-index {
+  margin: 0 calc(0.56rem * -1);
+}
+@media (min-width: 37em) {
+  main > .wrapper, main > dl, main > header,
+main > footer,
+main > main,
+main > section,
+main > figure,
+main > form,
+main > .site-index {
+    margin: 0;
+  }
+}
+
+@media (min-width: 37em) {
+  section, main header {
+    padding: 2.36rem 0;
+  }
 }
 
 .inline {
   display: initial;
   margin: initial;
   width: auto;
-}
-
-section, main header {
-  padding: 2.36rem 0;
 }
 
 div, p, h1, h2, h3, h4, li, blockquote, label, ul, ol {
@@ -360,15 +402,24 @@ figure pre {
 figcaption {
   grid-column: aside;
   font-size: 0.75rem;
-  text-align: right;
+  text-align: left;
   font-weight: bold;
+  padding: 0.56rem 0;
 }
 figcaption .bytes {
   font-weight: normal;
 }
+@media (min-width: 37em) {
+  figcaption {
+    text-align: right;
+    padding: 0;
+  }
+}
 
-figure:before {
-  content: "";
+@media (min-width: 37em) {
+  figure:before {
+    content: "";
+  }
 }
 
 pre {
@@ -520,6 +571,15 @@ sup > a:target {
   outline-offset: 2px;
 }
 
+.highlight {
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0.2em 0.4em;
+  background: #fff;
+  background: var(--shade);
+}
+
 body {
-  padding: 1rem;
+  padding: 2rem;
 }

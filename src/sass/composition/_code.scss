@@ -49,17 +49,29 @@ figcaption {
 
     grid-column:aside;
     font-size:get-size('300');
-    text-align: right;
+    text-align: left;
     font-weight:bold;
+    padding:get-size('200') 0;
 
     .bytes {
         font-weight:normal;
     }
+
+    @include media-query('md') {
+        text-align: right;
+        padding:0;
+    }
 }
 
 figure:before {
-    content:"";
+
     @extend .margin-decoration;    
+
+
+    @include media-query('md') {
+        content:"";
+    }
+
 }
 
 pre {

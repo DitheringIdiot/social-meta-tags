@@ -22,6 +22,8 @@ previousLink: '/'
 
 :::
 
+::: section
+
 Social media is a bad for your mental health, your privacy, your democracy — and for the performance of your website.
 
 Peak at the source code of most websites, look between the `<head>` tags, and you're likely to see a bunch of meta tags like this:
@@ -55,6 +57,11 @@ The purpose of these tags is to tell messaging and social media apps how to disp
 
 This is helpful for these apps. But it means every request to your site made by a *human* is weighed down by these tags — so ideally, your site should use as few as possible.
 
+:::
+
+
+::: section
+
 ## Which meta tags should you&nbsp;use?
 
 You could just not have any of these tags — that's fine.
@@ -64,6 +71,8 @@ But let's assume you want `link previews` of your website to be displayed — wh
 The following table shows the results of using the [link&nbsp;preview&nbsp;tester](/link-preview-tester) on some of the most popular social media and messaging&nbsp;apps.
 
 It shows which `<meta>` tags display `link previews` on which apps.
+
+:::
 
 ::: section bg-glare
 
