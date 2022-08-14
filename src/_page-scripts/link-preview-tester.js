@@ -15,8 +15,7 @@ function updateURL () {
         }
     }
 
-    url = baseUrl + randomNumber + '/' + values.join('/')
-    urlEl.innerText = url
+    urlEl.innerText = baseUrl + randomNumber + '/' + values.join('/')
 }
 
 
