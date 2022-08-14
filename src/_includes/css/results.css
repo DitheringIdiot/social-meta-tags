@@ -386,6 +386,7 @@ code {
 }
 
 figure {
+  padding: 1rem 0;
   font-family: var(--mono);
   grid-auto-flow: dense;
 }
@@ -640,7 +641,7 @@ p sup a:hover, li sup a:hover {
 }
 
 /* LINKS and ANCHORS */
-p a, figcaption a {
+p a, figcaption a, li a {
   color: inherit;
   text-decoration: none;
   -webkit-box-decoration-break: clone;
@@ -649,7 +650,7 @@ p a, figcaption a {
   border: dashed 2px var(--link);
   padding: 0.2em 0.4em;
 }
-p a:hover, figcaption a:hover {
+p a:hover, figcaption a:hover, li a:hover {
   background: var(--link);
 }
 

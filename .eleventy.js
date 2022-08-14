@@ -27,6 +27,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png")
     eleventyConfig.addPassthroughCopy("./src/robots.txt")
     eleventyConfig.addPassthroughCopy("./src/_redirects")
+    eleventyConfig.addPassthroughCopy("./src/images/*")
 
     eleventyConfig.addPlugin(pluginRss)
 

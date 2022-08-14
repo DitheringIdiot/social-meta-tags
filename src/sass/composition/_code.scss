@@ -30,6 +30,7 @@ code {
 
 figure {
 
+    padding:get-size('400') 0;
     font-family:var(--mono);
     grid-auto-flow: dense;
 

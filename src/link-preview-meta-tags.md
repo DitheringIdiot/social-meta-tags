@@ -51,32 +51,55 @@ Peak at the source code of most websites, look between the `<head>` tags, and yo
 
 </figure>
 
-The purpose of these tags is to tell messaging and social media apps how to display `link previews`. 
+The purpose of these tags is to tell messaging and social&nbsp;media&nbsp;apps how to display `link previews`.
 
-*e.g. when you share a url on iMessage, the recipient of the url will see the title, description and sometimes an image, like this:*
+`Link previews` let people know about a link before they click on it. They display a url's `title`, `description`, and sometimes an `image`.
 
-This is helpful for these apps. But it means every request to your site made by a *human* is weighed down by these tags — so ideally, your site should use as few as possible.
+Here's an example of a link preview being displayed in `iMessage`:
+
+<figure class="bg-shade">
+
+<figcaption>
+    CIA Realizes It's Been Using Black Highlighters All These Years — <a href="https://www.theonion.com/cia-realizes-its-been-using-black-highlighters-all-thes-1819568147">theonion.com</a>
+</figcaption>
+
+<img src="/images/link-preview-example.png" width="322px" height="238px"/>
+
+</figure>
+
+## How to create link previews
+
+There are four popular systems for creating link previews:
+
+- [Facebook's `open graph`](https://ogp.me/)
+- [Twitter `cards`](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards) 
+- [`oEmbed`](https://oembed.com/)
+- [`schema.org`](https://schema.org/docs/documents.html)
+
+These systems also have more than one way of being implemented. (See the table below)
+
+All these systems involve placing code snippets between the `<head>` tags of your page.
+
+Adding these code snippets helps bots run by facebook, twitter, and other apps, build `link previews` of your site.
+
+But, this code also weighs down your website for all your **human** visitors — and many websites implement three or four of these methods.
+
+You could just not have any of these tags — that's fine.
+
+But assuming you want `link previews` of your website to be displayed — **what is the most effective combination of these tags?** 
+
+That's something the world needed to know — so I built [link&nbsp;preview&nbsp;tester.](/link-preview-tester) It's probably the most boring tool anyone has ever made — and I really hope someone finds it helpful!
 
 :::
 
 
 ::: section
 
-## Which meta tags should you&nbsp;use?
-
-You could just not have any of these tags — that's fine.
-
-But let's assume you want `link previews` of your website to be displayed — what is the most effective combination of tags?
+## Which meta tags work on which apps?
 
 The following table shows the results of using the [link&nbsp;preview&nbsp;tester](/link-preview-tester) on some of the most popular social media and messaging&nbsp;apps.
 
 It shows which `<meta>` tags display `link previews` on which apps.
-
-:::
-
-::: section bg-glare
-
-### Which meta tags work on which apps?
 
 {% set table %}
 {% include 'results.njk' %}
@@ -122,7 +145,7 @@ But it seems the clear winner is Facebook's Open Graph tags.
 
 Facebook and twitter are basically evil — so it's understandable if you don't want to use their tags.
 
-You could do what this website does, and just use a meta description tag, and learn to live with there being no images in your website's link previews…
+You could do what this website does, and just use a `meta description` tag, and learn to live with there being no images in your website's link previews…
 
 <figure>
 
@@ -134,7 +157,6 @@ You could do what this website does, and just use a meta description tag, and le
 <title>Get out of my &lt;head&gt;</title>
 <meta name="description" content="An incredible website for testing meta tags">
 ```
-
 
 </figure>
 
@@ -161,6 +183,7 @@ You could do what this website does, and just use a meta description tag, and le
 ```
 
 </figure>
+
 
 :::
 

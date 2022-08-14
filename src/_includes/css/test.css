@@ -386,6 +386,7 @@ code {
 }
 
 figure {
+  padding: 1rem 0;
   font-family: var(--mono);
   grid-auto-flow: dense;
 }
