@@ -141,9 +141,9 @@ But it seems the clear winner is Facebook's Open Graph tags.
 </figure>
 
 
-### What if i don't want facebook or twitter proprietary meta tags polluting my lovely website?
+### What if i don't want Facebook or Twitter proprietary meta tags polluting my lovely website?
 
-Facebook and twitter are basically evil — so it's understandable if you don't want to use their tags.
+Facebook and Twitter are basically evil — so it's understandable if you don't want to use their tags.
 
 You could do what this website does, and just use a `meta description` tag, and learn to live with there being no images in your website's link previews…
 
