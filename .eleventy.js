@@ -29,10 +29,13 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPassthroughCopy("./src/_redirects")
 
     eleventyConfig.addPlugin(pluginRss)
-    eleventyConfig.addPlugin(socialImages)
 
 
     
+    eleventyConfig.addPlugin(socialImages)
+
+
+
     eleventyConfig.addPlugin(syntaxHighlight, {
         trim: true
     })
