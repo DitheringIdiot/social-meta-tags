@@ -389,6 +389,7 @@ figure {
   padding: 1rem 0;
   font-family: var(--mono);
   grid-auto-flow: dense;
+  padding: 1rem 0.56rem;
 }
 figure * {
   grid-column: main;
@@ -398,6 +399,11 @@ figure pre {
   background: var(--code-bg);
   color: var(--code-text);
   border-radius: 4px;
+}
+@media (min-width: 37em) {
+  figure {
+    padding: 1rem 0;
+  }
 }
 
 figcaption {
@@ -414,6 +420,8 @@ figcaption .bytes {
   figcaption {
     text-align: right;
     padding: 0;
+    max-height: 2rem;
+    overflow: visible;
   }
 }
 
@@ -521,10 +529,7 @@ ol li:before {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.loaded-fonts ol li:before {
-  padding-bottom: 0.05em;
+  padding-top: 0.11em;
 }
 
 dl {

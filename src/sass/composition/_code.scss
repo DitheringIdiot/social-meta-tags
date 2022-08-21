@@ -44,6 +44,14 @@ figure {
             color:var(--code-text);
             border-radius:4px;
     }
+
+    padding:get-size('400') get-size('200');
+
+    @include media-query('md') {
+        padding:get-size('400') 0;
+    }
+
+
 }
 
 figcaption {
@@ -61,6 +69,8 @@ figcaption {
     @include media-query('md') {
         text-align: right;
         padding:0;
+        max-height:2rem;
+        overflow:visible;
     }
 }
 

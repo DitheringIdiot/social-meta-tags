@@ -56,6 +56,8 @@ blockquote {
 p sup, li sup {
 
     a {
+        @extend .font-mono;
+
         background:var(--link);
         color:inherit;
         display:inline-flex;
@@ -65,9 +67,8 @@ p sup, li sup {
         height:get-size('300');
         width:get-size('300');
         border-radius:1rem;
-        padding-top:0.05em;
+        padding-top:0.22em;
         font-style:normal;
-        @extend .font-mono;
         box-shadow: none;
         text-decoration: none;
     }
@@ -75,6 +76,7 @@ p sup, li sup {
     a:hover {
         box-shadow: none;
         background:var(--highlight);
+        border:0;
     }
     
 }

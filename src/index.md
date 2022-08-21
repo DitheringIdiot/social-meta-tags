@@ -20,6 +20,7 @@ templateEngineOverride: njk, md
 <h2>Guides</h2>
 
 * [Link preview meta tags](/link-preview-meta-tags/)
+* [x-ua-compatible](/x-ua-compatible)
 
 
 <h2>Tools</h2>

@@ -62,16 +62,17 @@ ul {
                 display:flex;
                 justify-content:center;
                 align-items: center;
+                padding-top:.11em;
             }
         }
     }
 
 
-    .loaded-fonts {
-        ol li:before {
-            padding-bottom:0.05em;
-        }
-    }
+    // .loaded-fonts {
+    //     ol li:before {
+    //         padding-bottom:0.05em;
+    //     }
+    // }
 
 
 
