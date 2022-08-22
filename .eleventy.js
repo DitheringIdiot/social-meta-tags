@@ -18,7 +18,8 @@ module.exports = (eleventyConfig) => {
 
     eleventyConfig.addPassthroughCopy({ "./src/_includes/css/*": "/css/" })
 
-    eleventyConfig.addPassthroughCopy({"./src/icons/favicon.ico": "/favicon.ico"})
+    eleventyConfig.addPassthroughCopy({ "./src/icons/favicon.ico": "/favicon.ico"})
+    eleventyConfig.addPassthroughCopy({ "./src/icons/*" : "/icons"})
     eleventyConfig.addPassthroughCopy({ "./src/fonts/*": "/" })
     
 

@@ -29,5 +29,5 @@
   function = "link-preview-test"
 
 [[edge_functions]]
-  path = "/test/*"
-  function = "hello"
+  path = "/favicon-test/*"
+  function = "favicon-test"

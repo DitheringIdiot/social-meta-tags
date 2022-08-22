@@ -1,2 +1,6 @@
 @import 'critical';
-@import 'blocks/textarea'
+@import 'blocks/textarea';
+
+* {
+    font-family:monospace !important;
+}

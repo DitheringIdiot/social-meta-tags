@@ -92,15 +92,23 @@ const socialPreviewTestmarkupObj = (optionsArray, url, stylesheet) => {
         const stylesheetLink = `<link rel="stylesheet" href="${stylesheet}">`
 
         return `<head lang="en"${microdataHeadInfo}>
+
+                <!-- Title tag -->
                 <title>Link Preview Test | Title Tag</title>
                 ${content}
+
+                <!-- Stylesheet -->
                 ${stylesheetLink}
+                
                 </head>`
     }
+
+    let optionsPath = ''
 
     optionsArray.forEach(item => {
         if (markupObj[item]) {
             headMarkupInner += markupObj[item](url)
+            optionsPath += (item + '/')
         }
     })
 
@@ -110,7 +118,10 @@ const socialPreviewTestmarkupObj = (optionsArray, url, stylesheet) => {
 
     const headMarkup = headMarkupOuter(headMarkupInner, usesMicrodata, stylesheet)
 
-    return headMarkup
+    return {
+        markup:headMarkup,
+        optionsPath:optionsPath
+    }
 
 }
 

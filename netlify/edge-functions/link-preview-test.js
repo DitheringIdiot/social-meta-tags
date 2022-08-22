@@ -16,8 +16,6 @@ export default (request, context) => {
 
     // Get query string and create options object
 
-    const urlBeforeRedirect = 'https://getoutofmyhead.dev/link-preview-test/' + randomNumber + '/' + options.join('/')
-
     // pass options object to function that generates <head></head> markup
 
     // pass options to a function that generates the markup for the page, just to add MicroData to the html tag
@@ -25,6 +23,7 @@ export default (request, context) => {
     // create body with the head markup in a code block
 
     const stylesheet = '/css/test.css'
+    
 
 
     const trimWhitespace = (content) => {
@@ -32,7 +31,10 @@ export default (request, context) => {
         return content.split('\n').map(line => line.trim()).join('\n').replace(/(\r\n|\r|\n){2,}/g, '$1\n')
     }
 
-    const markup = trimWhitespace(socialPreviewTestMarkup(options, urlBeforeRedirect, stylesheet))
+
+    const previewTestValues = socialPreviewTestMarkup(options, url, stylesheet)
+
+    const markup = trimWhitespace(previewTestValues.markup)
 
     const escapeMarkup = (content) => {
         return content.replace(/&/g, "&amp;")
@@ -44,13 +46,17 @@ export default (request, context) => {
 
     const escapedMarkupForCodeBlock = escapeMarkup(markup)
 
+
+    const newURL = 'https://getoutofmyhead.dev/link-preview-test/' + randomNumber + '/' + previewTestValues.optionsPath
+
+
     const bodyMarkup = `
         <main>
             <h1>Link Preview H1</h1>
             <p>This page is for testing link previews on different platforms. <a href="/link-preview-tester">Learn More</a></p>
             <figure>
             <figcaption>Use this url to test this page</figcaption>
-            <textarea readonly onclick="this.select()">${urlBeforeRedirect}</textarea>
+            <textarea readonly onclick="this.select()">${newURL}</textarea>
             </figure>
             <figure>
                 <figcaption>This page's &lt;head&gt;</figcaption>
