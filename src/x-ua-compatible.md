@@ -55,11 +55,11 @@ All `IE=edge` does is tell `IE` to do something it already does. It's maddening.
 
 My theory —  developers were afraid that `IE` would render their page in an older `document mode`. There was a lot of uncertainty surrounding `IE`  and the documentation for this tag is overly complicated —  it was better to be safe than sorry.
 
-Using this tag would also stop a `compatibility mode` button from appearing in `IE 8-10`. If the button was present, it allowed users to toggle between a spec-compliant mode and older `document modes`[^3]  — which may have spooked some developers.
+Using this tag would also stop a `compatibility mode` button from appearing in `IE 8-10`. If the button was present, it allowed users to toggle between a spec-compliant mode and older `document modes`[^2]  — which may have spooked some developers.
 
 `x-ua-compatible` was added to templates and frameworks by clever developers — who probably know something you don't — and the more it appeared the more it seemed like it was necessary.
 
-`Bootstrap`, a very popular UI framework made by `Twitter`, recommended using this tag up until 2018.[^2]
+`Bootstrap`, a very popular UI framework made by `Twitter`, recommended using this tag up until 2018.[^3]
 
 ## Just delete the tag 
 
@@ -120,9 +120,9 @@ There are some things that should be taken into account:
 
 [^1]: [Microsoft Internet Explorer Standards](https://docs.microsoft.com/en-us/openspecs/ie_standards/ms-iedoco/3764531c-97c8-4bf2-bdc6-b3623738ea46)
 
-[^2]: [bootlint on github](https://github.com/twbs/bootlint/wiki/W002)
+[^2]: [IE8 and the X-UA-Compatible situation](https://web.archive.org/web/20180206103111/http://farukat.es/journal/2009/05/245-ie8-and-the-x-ua-compatible-situation)
 
-[^3]: [IE8 and the X-UA-Compatible situation](https://web.archive.org/web/20180206103111/http://farukat.es/journal/2009/05/245-ie8-and-the-x-ua-compatible-situation)
+[^3]: [bootlint on github](https://github.com/twbs/bootlint/wiki/W002)
 
 [^4]: [Compatibility changes in IE11](https://docs.microsoft.com/en-gb/previous-versions/windows/internet-explorer/ie-developer/dev-guides/bg182625(v=vs.85)#document-mode-changes)
 
