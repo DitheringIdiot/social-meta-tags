@@ -67,7 +67,7 @@ However, you don't need to do this to support multiple icon sizes.
 
 `.ico` isn't *really* an image format. It's a container for `.bmp` and `.png`.
 
- So you can remove all those seperate `<link>` tags, and replace them with a single `favicon.ico` in your site's root directory.
+So you can remove all those seperate `<link>` tags, and replace them with a single `favicon.ico` in your site's root directory.
 
 
 ::: figure aside
@@ -105,7 +105,6 @@ Icons larger that `48x48` can still benefit from compression without effecting `
 ::: 
 
 ::: section
-
 
 ### Further optimizations
 
