@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" height="200" width="200">
-<rect fill="#99FFCA" height="200" width="200"/>
+<rect fill="#99ffca" height="200" width="200"/>
 <text font-size="50" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">SVG</text>    
 </svg>

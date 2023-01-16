@@ -5,15 +5,13 @@ style: "home"
 templateEngineOverride: njk, md
 previousText: 'home'
 previousLink: '/'
-nextText: 'apple touch icons'
-nextLink: '/apple-touch-icon/'
 ---
 
 ::: header
 
-# favicons
+<h1><span class="highlight">Zero byte favicon&nbspmarkup</span></h1>
 
-<p class="lead"><span>Lose links to favicons in your markup<br>without losing the favicons</i></span></p>
+<p><span class="highlight">Keep the favicons without any of the markup</span></p>
 
 :::
 
@@ -39,14 +37,14 @@ By default, all browsers look for a file `/favicon.ico` in a site's root directo
 
 So, you can avoid having any links in your `<head>` by hosting a `favicon` at the root of your site: 
 
-*e.g. `https://example.com/favicon.ico`*
+e.g. `https://example.com/favicon.ico`
 
 So, if your `favicon` is already hosted at your site's root, and is in the `.ico` format — you can go ahead and delete that link from your&nbsp;`<head>`. 
 
 
 ## What about different favicon sizes?
 
-Sometimes you'll see links to different `favicon` sizes in the `<head>`, like this:
+Sometimes you'll see links to different `favicon` sizes in the `<head>`, like&nbsp;this:
 
 :::
 
@@ -72,9 +70,15 @@ However, you don't need to do this to support multiple icon sizes.
  So you can remove all those seperate `<link>` tags, and replace them with a single `favicon.ico` in your site's root directory.
 
 
-::: aside aside-main
+::: figure aside
 
-### How to make a `favicon` containing multiple&nbsp;icons using `gimp`
+<figcaption>
+ 
+### How to make a favicon containing multiple icons using gimp
+
+</figcaption>
+
+<aside>
 
 You can use the [free and open-source image editor `Gimp`](https://www.gimp.org/).
 
@@ -96,9 +100,24 @@ Note that `IE 10` and below do not support `png` favicons.[^2] To support `IE <=
 
 Icons larger that `48x48` can still benefit from compression without effecting `IE <= 10`.
 
+</aside>
+
 ::: 
 
+::: section
 
+
+### Further optimizations
+
+By default, favicons are cached for a long period of time. So any optimization to the favicon itself is ineffective at saving data overall.
+
+However, there's no downside to having an extremely lightweight favicon. So consider optimizing your favicon's size anyway.
+
+Your favicon may not be effectively compressed — so consider using the online tool [Squoosh](https://squoosh.app/) to compress `png`s before turning them into `ico` files.
+
+Similar optimizations can also be achieved with `apple-touch-icons` and `Tiles` for Windows.
+
+:::
 
 [^1]: [http archive Almanac 2020](https://almanac.httparchive.org/en/2020/markup#favicons)
 [^2]: [Can I Use | png favicons](https://caniuse.com/link-icon-png)

@@ -1,5 +1,7 @@
 textarea {
     border:solid 2px var(--text);
+    background:var(--base);
+    color:var(--text);
     border-radius:4px;
     resize: vertical;
     width:100%;

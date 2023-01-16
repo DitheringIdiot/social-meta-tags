@@ -9,7 +9,6 @@ nextText: 'apple touch icons'
 nextLink: '/apple-touch-icons/'
 ---
 
-
 # Meta Keywords
 
 <p class="lead"><span>Leave the keywords meta tag in the 90s.</span></p>
@@ -20,7 +19,7 @@ Search engines used keywords to help rank pages — but that relied on people b
 
 It didn't take long for the kewords `<meta>` tag to be misused — stuffed with duplicate or unrelated keywords in an attempt to trick search engines.
 
-Here's an example of `austinpowers.com` trying to get traffic from people searching *comedy*, *Batman*, and even *cryogenics*.
+Here's an example of `austinpowers.com` presumably trying to get traffic from people searching *comedy*, *Batman*, and even *cryogenics*.
 
 :::
 

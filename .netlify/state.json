@@ -9,8 +9,11 @@
 			"subdivision": {
 				"code": "ENG",
 				"name": "England"
-			}
+			},
+			"timezone": "Europe/London",
+			"latitude": 51.4743,
+			"longitude": -0.0928
 		},
-		"timestamp": 1661190717331
+		"timestamp": 1673888293872
 	}
 }

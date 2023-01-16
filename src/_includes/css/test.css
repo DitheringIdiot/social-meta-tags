@@ -238,7 +238,7 @@ form,
 footer > nav,
 .site-index {
     display: grid;
-    grid-template-columns: [left-margin] minmax(1rem, 2fr) [aside] minmax(7rem, 12fr) 1rem [aside-gap] 2fr [left-gap] 1rem [main] minmax(auto, 32rem) [right-gap] minmax(1rem, 10fr) [right-margin] minmax(1rem, 2fr);
+    grid-template-columns: [left-margin] minmax(1rem, 2fr) [box-start aside-start] minmax(7rem, 12fr) [aside-end] 1rem [aside-gap] 4rem [left-gap] 1rem [main] minmax(auto, 32rem) [right-gap box-end] minmax(1rem, 10fr) [right-margin] minmax(1rem, 2fr);
     grid-auto-rows: auto;
     grid-column: 1/10;
     margin: 0;
@@ -341,6 +341,12 @@ ul, ol {
     --glare:#292929;
     --base:#1d1d1d;
     --shade:#121212;
+    --shadier:#090909;
+    --highlight-shade:#1B3731;
+    --highlight:#234840;
+    --highlight-glare:#356E62;
+    --link:#20606F;
+    --link-hover:#1C5765;
   }
 }
 
@@ -415,6 +421,10 @@ figcaption {
 }
 figcaption .bytes {
   font-weight: normal;
+}
+figcaption h2, figcaption h3, figcaption h4 {
+  font-size: 0.75rem;
+  margin-top: 0;
 }
 @media (min-width: 37em) {
   figcaption {
@@ -493,7 +503,7 @@ ol li, ul li {
 ol li:before, ul li:before {
   position: relative;
   float: left;
-  margin-left: calc(3em * -1);
+  margin-right: 1em;
 }
 ol li + li, ul li + li {
   margin-top: 1.33rem;
@@ -518,18 +528,16 @@ ol li:before {
   counter-increment: x;
   content: counter(x);
   border-radius: 1rem;
-  width: 1.33em;
-  height: 1.33em;
+  width: 1.5em;
+  height: 1.5em;
   font-size: 0.75em;
-  margin-top: 0.7em;
+  margin-top: 0.5em;
   background: var(--glare);
   border: solid 1px var(--text);
   color: var(--text);
-  top: -0.23em;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0.11em;
 }
 
 dl {
@@ -537,7 +545,6 @@ dl {
   align-items: center;
 }
 dl dt {
-  font-style: italic;
   margin-top: 1rem;
   grid-column: aside;
   text-align: right;
@@ -560,7 +567,7 @@ dl dd:before {
 }
 
 .footnotes {
-  font-family: var(--sans);
+  font-family: var(--mono);
   font-size: 0.75rem;
 }
 
@@ -579,6 +586,8 @@ sup > a:target {
 
 textarea {
   border: solid 2px var(--text);
+  background: var(--base);
+  color: var(--text);
   border-radius: 4px;
   resize: vertical;
   width: 100%;

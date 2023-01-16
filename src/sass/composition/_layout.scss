@@ -20,12 +20,12 @@ body, html {
         display:grid;
         grid-template-columns:
             [left-margin] minmax(1rem, 2fr) 
-            [aside] minmax(7rem, 12fr)
-            1rem
-            [aside-gap] 2fr 
+            [box-start aside-start] minmax(7rem, 12fr)
+            [aside-end] 1rem
+            [aside-gap] 4rem
             [left-gap] 1rem
             [main] minmax(auto, 32rem) 
-            [right-gap] minmax(1rem, 10fr)
+            [right-gap box-end] minmax(1rem, 10fr)
             [right-margin] minmax(1rem, 2fr);
         grid-auto-rows: auto;
         grid-column:1/10;
