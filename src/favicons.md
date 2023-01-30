@@ -5,6 +5,8 @@ style: "home"
 templateEngineOverride: njk, md
 previousText: 'home'
 previousLink: '/'
+nextText: 'apple touch icon'
+nextLink: '/apple-touch-icons'
 ---
 
 ::: header

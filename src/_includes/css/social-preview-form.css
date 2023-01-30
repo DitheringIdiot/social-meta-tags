@@ -215,7 +215,7 @@ body, html {
   overflow-x: hidden;
 }
 
-.wrapper, .site-head a, dl, header,
+.wrapper, .site-head a, header,
 footer,
 main,
 section,
@@ -229,7 +229,7 @@ footer > nav,
   padding: 0.56rem;
 }
 @media (min-width: 37em) {
-  .wrapper, .site-head a, dl, header,
+  .wrapper, .site-head a, header,
 footer,
 main,
 section,
@@ -246,7 +246,7 @@ footer > nav,
     padding: 0;
   }
 }
-.wrapper > * + *, .site-head a > * + *, dl > * + *, header > * + *,
+.wrapper > * + *, .site-head a > * + *, header > * + *,
 footer > * + *,
 main > * + *,
 section > * + *,
@@ -266,7 +266,7 @@ main {
   }
 }
 
-main > .wrapper, .site-head main > a, main > dl, main > header,
+main > .wrapper, .site-head main > a, main > header,
 main > footer,
 main > main,
 main > section,
@@ -276,7 +276,7 @@ main > .site-index {
   margin: 0 calc(0.56rem * -1);
 }
 @media (min-width: 37em) {
-  main > .wrapper, .site-head main > a, main > dl, main > header,
+  main > .wrapper, .site-head main > a, main > header,
 main > footer,
 main > main,
 main > section,
@@ -541,29 +541,16 @@ ol li:before {
 }
 
 dl {
-  font-size: 1rem;
   align-items: center;
+  grid-column: main;
+  font-family: var(--mono);
 }
 dl dt {
+  display: block;
   margin-top: 1rem;
-  grid-column: aside;
-  text-align: right;
 }
 dl dd {
-  display: grid;
-  margin-top: 1rem;
-  grid-column: aside-gap/right-gap;
-  grid-template-columns: [aside-gap] 4fr [left-gap] 1rem [main] minmax(auto, 30rem);
-}
-dl dd > * {
-  grid-column: main;
-}
-dl dd:before {
-  content: "";
-  height: 1px;
-  margin-top: 0.8em;
-  background: var(--text);
-  grid-column: aside-gap;
+  display: block;
 }
 
 .footnotes {

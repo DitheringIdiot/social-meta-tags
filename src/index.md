@@ -23,6 +23,7 @@ templateEngineOverride: njk, md
 * [Link preview meta tags](/link-preview-meta-tags/)
 * [x-ua-compatible](/x-ua-compatible)
 * [Favicons](/favicons)
+* [Apple touch icons](/apple-touch-icons)
 * [HandheldFriendly](/handheld-friendly/)
 
 <h2>Tools</h2>

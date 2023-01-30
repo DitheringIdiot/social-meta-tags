@@ -35,7 +35,7 @@ If we unscientifically extrapolate from those numbers — that's around `7%` of 
 The `HandheldFriendly` `<meta>` tag was invented for the `AvantGo` web browser.
 
 
-`AvantGo` was used on `Palm Pilots` between 2000-2009.[^2]
+`AvantGo` was used on `Palm Pilots` between 2000-2009.[^1]
 
 ::: 
 
@@ -47,7 +47,7 @@ The `HandheldFriendly` `<meta>` tag was invented for the `AvantGo` web browser.
 
 It was more of an `RSS` feed than a browser. 
 
-If the `HandheldFriendly` tag wasn't present `AvantGo` would remove `<table>` elements, "certain image tags" and `JavaScript` from from the page.[^1]
+If the `HandheldFriendly` tag wasn't present `AvantGo` would remove `<table>` elements, "certain image tags" and `JavaScript` from from the page.[^2]
 
 By using the `HandheldFriendly` tag you're telling the `1` person in the world that still uses `AvantGo` that you made your website compatible with their Palm Pilot — **which would be a lie!**
 
@@ -62,6 +62,8 @@ These people do exist.
 However, even if you want your website to work for the small number of hobbyists who will access it using a Palm Pilot — you still don't need this tag — the Palm Pilot will simply load your website as best as it can without the tag.
 
 **For anyone is still using these browsers, let their devices render your content in the default way.**
+
+
 
 :::
 
@@ -83,6 +85,8 @@ However, **Blackberry Browser also supported `<meta name="viewport" content="wid
 
 :::
 
+
+
 ::: section
 
 ## Why is it still around?
@@ -97,7 +101,7 @@ But now that you know what it is, and what it does, you can thank it for it's se
 
 :::
 
-[^1]:[avantgo.com — developer reference](https://web.archive.org/web/20000903162014/http://avantgo.com/developer/reference/tutorials/jumpstart/jumpstart2.html#TOC3)
-[^2]:[Palm info center — AvantGo going away](https://web.archive.org/web/20180614094913/http://www.palminfocenter.com/news/6884/avantgo-going-away/)
+[^1]:[Palm info center — AvantGo going away](https://web.archive.org/web/20180614094913/http://www.palminfocenter.com/news/6884/avantgo-going-away/)
+[^2]:[avantgo.com — developer reference](https://web.archive.org/web/20000903162014/http://avantgo.com/developer/reference/tutorials/jumpstart/jumpstart2.html#TOC3)
 [^3]:[pcmag.com — blackberry OS 4.5](https://uk.pcmag.com/operating-systems/6564/blackberry-os-45)
 [^4]:[Manuals Lib — Blackberry Browser Fundamentals Guide](https://www.manualslib.com/manual/368374/Blackberry-Browser-Version-4-7-0-Fundamentals-Guide.html?page=18#manual)

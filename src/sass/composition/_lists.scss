@@ -77,36 +77,18 @@ ul {
 
 dl {
     
-    @extend .wrapper;
-    font-size:get-size('400');
     align-items: center;
+    grid-column:main;
+    font-family:var(--mono);
+
 
     dt {
+        display:block;
         margin-top:1rem;
-        grid-column:aside;
-        text-align: right;
     }
 
     dd {
-        display:grid;
-        margin-top:1rem;
-        grid-column:aside-gap / right-gap;
-        grid-template-columns:         
-        [aside-gap] 4fr 
-        [left-gap] 1rem
-        [main] minmax(auto, 30rem);
-
-        > * {
-            grid-column: main;
-        }
-
-        &:before {
-            content:"";
-            height:1px;
-            margin-top:.8em;
-            background:var(--text);
-            grid-column:aside-gap;
-        }
+        display:block;
     }
 }
 
