@@ -43,9 +43,11 @@ Just like with [favicon.ico](/favicons) you can **remove these links** and place
 
 *e.g. `https://example.com/apple-touch-icon.png`*
 
-`180x180` is the largest icon size any `iOS` device requires.[^1] **Other devices will downscale the image to fit.** — and as of writing this — `Apple` use a single `152x152` icon on apple.com
+`180x180` is the largest icon size any `iOS` device requires.[^1] **Other devices will downscale the image to fit.** — and as of writing this — `Apple` use a single `152x152` icon on `apple.com`.
 
-But, if you'd still rather specify a different image for every possible icon size, you can still do that without adding any code to your `<head>`.
+### What about other sizes?
+
+If you'd still rather specify a different image for every possible icon size, you can still do that without adding any code to your `<head>`.
 
 You can place multiple `apple-touch-icons` in your site's root directory.[^2] So long as they're named in the following way:
 
